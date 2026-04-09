@@ -5,6 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>病院紹介 | 一宮西病院 ワイヤーフレーム</title>
 <link rel="stylesheet" href="css/wireframe.css">
+<style>
+.wf-home-btn {
+  position: fixed; bottom: 20px; right: 20px; z-index: 9998;
+  display: flex; gap: 8px;
+}
+.wf-home-btn a {
+  display: flex; align-items: center; gap: 6px;
+  background: #0f172a; color: #e2e8f0; padding: 10px 16px;
+  border-radius: 8px; font-size: 12px; font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,.3); text-decoration: none;
+  transition: background .2s;
+}
+.wf-home-btn a:hover { background: #0ea5e9; color: #fff; text-decoration: none; }
+</style>
 </head>
 <body>
 
@@ -22,7 +36,7 @@
   <div class="header-right">
     <div class="header-tel">代表<br><span class="number">0586-48-0077</span></div>
     <a href="#" class="btn btn-primary">お問い合わせ</a>
-    <a href="#" class="btn btn-outline">交通アクセス</a>
+    <a href="access.html" class="btn btn-outline">交通アクセス</a>
   </div>
 </header>
 <nav class="gnav">
@@ -299,11 +313,11 @@
     <div class="sidebar-section">
       <div class="sidebar-title">病院紹介メニュー</div>
       <div class="sidebar-body">
-        <a href="#">病院長ご挨拶</a>
-        <a href="#">沿革</a>
-        <a href="#">病院概要</a>
-        <a href="#">活動実績</a>
-        <a href="#">病院指標</a>
+        <a href="about-top.html">病院長ご挨拶</a>
+        <a href="about-top.html">沿革</a>
+        <a href="about-top.html">病院概要</a>
+        <a href="about-top.html">活動実績</a>
+        <a href="about-top.html">病院指標</a>
         <a href="#">DPC特定病院群</a>
         <a href="#">災害拠点病院</a>
         <a href="#">病院からのお願い</a>
@@ -338,18 +352,18 @@
   <div class="footer-top">
     <div class="footer-col">
       <h4>ご利用案内</h4>
-      <a href="#">受診方法</a><a href="#">外来診療担当表</a><a href="#">休診案内</a>
-      <a href="#">入院のご案内</a><a href="#">お見舞い・面会</a><a href="#">交通アクセス</a>
+      <a href="guide-outpatient.html">受診方法</a><a href="guide-outpatient.html">外来診療担当表</a><a href="guide-outpatient.html">休診案内</a>
+      <a href="guide-inpatient.html">入院のご案内</a><a href="guide-inpatient.html">お見舞い・面会</a><a href="access.html">交通アクセス</a>
     </div>
     <div class="footer-col">
       <h4>病院について</h4>
-      <a href="#">病院長ご挨拶</a><a href="#">病院概要</a><a href="#">沿革</a>
-      <a href="#">病棟案内</a><a href="#">活動実績</a><a href="#">病院指標</a>
+      <a href="about-top.html">病院長ご挨拶</a><a href="about-top.html">病院概要</a><a href="about-top.html">沿革</a>
+      <a href="about-ward.html">病棟案内</a><a href="about-top.html">活動実績</a><a href="about-top.html">病院指標</a>
     </div>
     <div class="footer-col">
       <h4>その他</h4>
-      <a href="#">個人情報保護方針</a><a href="#">サイト利用について</a><a href="#">アクセシビリティ</a>
-      <a href="#">サイトマップ</a>
+      <a href="about-top.html">個人情報保護方針</a><a href="about-top.html">サイト利用について</a><a href="about-top.html">アクセシビリティ</a>
+      <a href="index.html">サイトマップ</a>
     </div>
   </div>
   <div class="footer-related">
@@ -362,5 +376,9 @@
 </footer>
 </div><!-- /page-wrap -->
 
+<div class="wf-home-btn">
+  <a href="index.html">&#9776; WF一覧</a>
+  <a href="top.html">&#8962; TOP</a>
+</div>
 </body>
 </html>

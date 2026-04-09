@@ -3,163 +3,354 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>一宮西病院 ワイヤーフレーム一覧</title>
+<title>一宮西病院 ワイヤーフレーム</title>
 <link rel="stylesheet" href="css/wireframe.css">
 <style>
-body { background: #0f172a; }
-.index-wrap { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
-.index-header { text-align: center; margin-bottom: 40px; color: #fff; }
-.index-header h1 { font-size: 28px; margin-bottom: 8px; }
-.index-header p { color: #94a3b8; font-size: 14px; }
-.index-header .badge { display: inline-block; background: #0ea5e9; color: #fff; padding: 4px 14px; border-radius: 20px; font-size: 12px; margin-top: 12px; }
-.section-label { color: #38bdf8; font-size: 13px; font-weight: 700; letter-spacing: 1px; margin: 30px 0 12px; text-transform: uppercase; padding-left: 4px; }
-.index-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 10px; }
-.index-card { background: #1e293b; border: 1px solid #334155; border-radius: 10px; padding: 20px; transition: all .2s; text-decoration: none !important; }
-.index-card:hover { border-color: #0ea5e9; background: #1e3a5f; transform: translateY(-2px); box-shadow: 0 4px 20px rgba(14,165,233,.2); }
-.index-card .icon { font-size: 28px; margin-bottom: 10px; }
-.index-card h3 { font-size: 14px; font-weight: 700; color: #e2e8f0; margin-bottom: 4px; }
-.index-card p { font-size: 11px; color: #64748b; line-height: 1.5; }
-.index-footer { text-align: center; margin-top: 40px; color: #475569; font-size: 12px; }
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",sans-serif;background:#0f172a;color:#e2e8f0;line-height:1.6}
+a{text-decoration:none}
+
+/* Hero */
+.hero{text-align:center;padding:50px 20px 30px;background:linear-gradient(135deg,#0c4a6e 0%,#0f172a 100%);border-bottom:1px solid #1e293b}
+.hero .logo{width:64px;height:64px;background:#e0f2fe;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:28px;color:#0284c7;font-weight:900;margin-bottom:14px}
+.hero h1{font-size:30px;font-weight:900;margin-bottom:6px}
+.hero .sub{color:#94a3b8;font-size:14px;margin-bottom:16px}
+.hero .badges{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.hero .badge{background:#1e293b;border:1px solid #334155;color:#94a3b8;padding:4px 14px;border-radius:20px;font-size:12px}
+.hero .badge b{color:#38bdf8}
+
+/* Quick Nav */
+.quick-nav{display:flex;justify-content:center;gap:0;background:#0c4a6e;border-bottom:1px solid #1e293b}
+.quick-nav a{padding:14px 28px;color:#fff;font-size:13px;font-weight:600;transition:background .2s;border-right:1px solid rgba(255,255,255,.1)}
+.quick-nav a:last-child{border-right:none}
+.quick-nav a:hover{background:#0ea5e9}
+
+/* Layout */
+.wrap{max-width:1100px;margin:0 auto;padding:30px 20px 60px}
+
+/* Section */
+.section{margin-bottom:36px}
+.section-label{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.section-label .line{flex:1;height:1px;background:#334155}
+.section-label span{color:#38bdf8;font-size:12px;font-weight:700;letter-spacing:1px;white-space:nowrap}
+
+/* Grid */
+.grid{display:grid;gap:14px}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+
+/* Card */
+.card{display:block;background:#1e293b;border:1px solid #334155;border-radius:10px;padding:20px;transition:all .2s;position:relative;overflow:hidden}
+.card:hover{border-color:#0ea5e9;background:#1e3a5f;transform:translateY(-2px);box-shadow:0 4px 20px rgba(14,165,233,.15)}
+.card .icon{font-size:28px;margin-bottom:10px;display:block}
+.card h3{font-size:14px;font-weight:700;color:#e2e8f0;margin-bottom:5px}
+.card p{font-size:11px;color:#64748b;line-height:1.5}
+.card .arrow{position:absolute;right:16px;top:50%;transform:translateY(-50%);color:#334155;font-size:18px;transition:color .2s}
+.card:hover .arrow{color:#38bdf8}
+.card.featured{border-color:#0ea5e9;background:linear-gradient(135deg,#0c4a6e 0%,#1e293b 100%)}
+.card.featured h3{color:#38bdf8}
+
+/* Tag */
+.tag{display:inline-block;font-size:10px;padding:2px 8px;border-radius:4px;margin-bottom:8px;font-weight:600}
+.tag-blue{background:rgba(14,165,233,.15);color:#38bdf8}
+.tag-green{background:rgba(34,197,94,.15);color:#4ade80}
+.tag-purple{background:rgba(168,85,247,.15);color:#c084fc}
+.tag-orange{background:rgba(251,146,60,.15);color:#fb923c}
+.tag-pink{background:rgba(244,114,182,.15);color:#f472b6}
+
+/* Sitemap tree */
+.sitemap-section{margin-bottom:24px}
+.sitemap-section h4{font-size:13px;color:#94a3b8;margin-bottom:8px;padding-left:4px}
+.tree{display:flex;flex-direction:column;gap:2px}
+.tree a{display:flex;align-items:center;gap:8px;padding:6px 12px;color:#cbd5e1;font-size:12px;border-radius:6px;transition:all .15s}
+.tree a:hover{background:#334155;color:#38bdf8}
+.tree a .dot{width:6px;height:6px;border-radius:50%;background:#475569;flex-shrink:0}
+.tree a:hover .dot{background:#38bdf8}
+
+/* Footer */
+.site-footer{text-align:center;padding:30px 20px;border-top:1px solid #1e293b;color:#475569;font-size:12px}
+.site-footer a{color:#64748b;margin:0 8px}
+.site-footer a:hover{color:#38bdf8}
 </style>
 </head>
 <body>
-<div class="index-wrap">
-  <div class="index-header">
-    <h1>一宮西病院 ワイヤーフレーム</h1>
-    <p>https://www.anzu.or.jp/ichinomiyanishi/ の全ページテンプレート</p>
-    <span class="badge">全22ページ / 調査日: 2026-04-09</span>
-  </div>
 
-  <div class="section-label">--- Main Pages ---</div>
-  <div class="index-grid">
-    <a href="top.html" class="index-card">
-      <div class="icon">🏠</div>
-      <h3>トップページ</h3>
-      <p>スライダー、お知らせ、診療科、センター紹介を含むメインページ</p>
-    </a>
-    <a href="guide-top.html" class="index-card">
-      <div class="icon">📋</div>
-      <h3>ご利用案内トップ</h3>
-      <p>外来・入院・施設情報への導線ページ</p>
-    </a>
-    <a href="guide-outpatient.html" class="index-card">
-      <div class="icon">🏥</div>
-      <h3>外来受診ガイド</h3>
-      <p>受診方法・外来フロー・持ち物案内</p>
-    </a>
-  </div>
-  <div class="index-grid">
-    <a href="guide-inpatient.html" class="index-card">
-      <div class="icon">🛏️</div>
-      <h3>入院・お見舞いガイド</h3>
-      <p>入院手続き・面会ルール・持ち物一覧</p>
-    </a>
-    <a href="access.html" class="index-card">
-      <div class="icon">🚌</div>
-      <h3>交通アクセス</h3>
-      <p>地図・バス路線・駐車場案内</p>
-    </a>
-    <a href="dock.html" class="index-card">
-      <div class="icon">🔬</div>
-      <h3>人間ドック・健診</h3>
-      <p>健診コース・予約方法・Q&amp;A</p>
-    </a>
-  </div>
-
-  <div class="section-label">--- 診療科・専門医療 ---</div>
-  <div class="index-grid">
-    <a href="department-list.html" class="index-card">
-      <div class="icon">🩺</div>
-      <h3>診療科一覧</h3>
-      <p>内科系12科・外科系13科・その他8科の一覧</p>
-    </a>
-    <a href="department-detail.html" class="index-card">
-      <div class="icon">💊</div>
-      <h3>診療科詳細</h3>
-      <p>個別診療科のドクター・治療・実績</p>
-    </a>
-    <a href="center-detail.html" class="index-card">
-      <div class="icon">⚕️</div>
-      <h3>センター詳細</h3>
-      <p>19専門センターの詳細ページ</p>
-    </a>
-  </div>
-  <div class="index-grid">
-    <a href="special-top.html" class="index-card">
-      <div class="icon">🔍</div>
-      <h3>専門医療トップ</h3>
-      <p>専門外来・医療機器・鏡視下手術</p>
-    </a>
-    <a href="special-interview.html" class="index-card">
-      <div class="icon">🎤</div>
-      <h3>ドクターインタビュー</h3>
-      <p>専門医による疾患解説記事</p>
-    </a>
-    <a href="area-top.html" class="index-card">
-      <div class="icon">🤝</div>
-      <h3>医療連携・紹介</h3>
-      <p>予約方法・1DAYセット・連携先案内</p>
-    </a>
-  </div>
-
-  <div class="section-label">--- 病院紹介・情報 ---</div>
-  <div class="index-grid">
-    <a href="about-top.html" class="index-card">
-      <div class="icon">🏢</div>
-      <h3>病院紹介トップ</h3>
-      <p>概要・沿革・理念・取り組み</p>
-    </a>
-    <a href="about-ward.html" class="index-card">
-      <div class="icon">🏗️</div>
-      <h3>病棟のご案内</h3>
-      <p>A棟・B棟のフロアマップ</p>
-    </a>
-    <a href="news-list.html" class="index-card">
-      <div class="icon">📰</div>
-      <h3>ニュース一覧</h3>
-      <p>お知らせ・速報のリスト表示</p>
-    </a>
-  </div>
-  <div class="index-grid">
-    <a href="news-detail.html" class="index-card">
-      <div class="icon">📄</div>
-      <h3>ニュース詳細</h3>
-      <p>個別記事の表示レイアウト</p>
-    </a>
-    <a href="column-detail.html" class="index-card">
-      <div class="icon">📝</div>
-      <h3>コラム記事詳細</h3>
-      <p>WEB講座・健康のつボ!の記事</p>
-    </a>
-    <a href="seminar.html" class="index-card">
-      <div class="icon">🎓</div>
-      <h3>市民公開講座</h3>
-      <p>年度別の講座一覧・申込案内</p>
-    </a>
-  </div>
-
-  <div class="section-label">--- 採用情報 ---</div>
-  <div class="index-grid">
-    <a href="recruit-top.html" class="index-card">
-      <div class="icon">👥</div>
-      <h3>採用情報トップ</h3>
-      <p>医師・看護師・コメディカル</p>
-    </a>
-    <a href="nurse.html" class="index-card">
-      <div class="icon">👩‍⚕️</div>
-      <h3>看護師採用</h3>
-      <p>看護部紹介・教育・福利厚生</p>
-    </a>
-    <a href="resident.html" class="index-card">
-      <div class="icon">👨‍🎓</div>
-      <h3>臨床研修医</h3>
-      <p>研修プログラム・先輩紹介</p>
-    </a>
-  </div>
-
-  <div class="index-footer">
-    <p>社会医療法人杏嶺会 一宮西病院 | Wireframe by Claude</p>
+<!-- ===== Hero ===== -->
+<div class="hero">
+  <div class="logo">杏</div>
+  <h1>一宮西病院</h1>
+  <p class="sub">ワイヤーフレーム &amp; サイトマップ</p>
+  <div class="badges">
+    <span class="badge"><b>22</b> ページ</span>
+    <span class="badge"><b>33</b> 診療科</span>
+    <span class="badge"><b>19</b> センター</span>
+    <span class="badge">調査日: <b>2026-04-09</b></span>
   </div>
 </div>
+
+<!-- ===== Quick Nav ===== -->
+<nav class="quick-nav">
+  <a href="top.html">TOP</a>
+  <a href="guide-top.html">ご利用案内</a>
+  <a href="department-list.html">診療科</a>
+  <a href="special-top.html">専門医療</a>
+  <a href="area-top.html">医療連携</a>
+  <a href="about-top.html">病院紹介</a>
+  <a href="news-list.html">ニュース</a>
+  <a href="recruit-top.html">採用</a>
+</nav>
+
+<div class="wrap">
+
+  <!-- ===== Main Pages ===== -->
+  <div class="section">
+    <div class="section-label"><span>MAIN PAGES</span><div class="line"></div></div>
+    <div class="grid grid-3">
+      <a href="top.html" class="card featured">
+        <span class="tag tag-blue">HOME</span>
+        <div class="icon">&#127968;</div>
+        <h3>トップページ</h3>
+        <p>スライダー / お知らせ / 診療科 / センター / 採用 / バナー</p>
+        <span class="arrow">&#8594;</span>
+      </a>
+      <a href="guide-top.html" class="card">
+        <span class="tag tag-green">GUIDE</span>
+        <div class="icon">&#128203;</div>
+        <h3>ご利用案内トップ</h3>
+        <p>外来・入院・施設情報への導線</p>
+        <span class="arrow">&#8594;</span>
+      </a>
+      <a href="guide-outpatient.html" class="card">
+        <span class="tag tag-green">GUIDE</span>
+        <div class="icon">&#127973;</div>
+        <h3>外来受診ガイド</h3>
+        <p>受診の流れ / 持ち物 / 担当表 / 夜間救急</p>
+        <span class="arrow">&#8594;</span>
+      </a>
+    </div>
+    <div class="grid grid-3" style="margin-top:14px">
+      <a href="guide-inpatient.html" class="card">
+        <span class="tag tag-green">GUIDE</span>
+        <div class="icon">&#128716;</div>
+        <h3>入院・お見舞いガイド</h3>
+        <p>入院準備 / 面会ルール / 持ち物 / 費用</p>
+        <span class="arrow">&#8594;</span>
+      </a>
+      <a href="access.html" class="card">
+        <span class="tag tag-green">GUIDE</span>
+        <div class="icon">&#128652;</div>
+        <h3>交通アクセス</h3>
+        <p>地図 / バス「一宮西線」/ 車 / 駐車場</p>
+        <span class="arrow">&#8594;</span>
+      </a>
+      <a href="dock.html" class="card">
+        <span class="tag tag-green">GUIDE</span>
+        <div class="icon">&#128300;</div>
+        <h3>人間ドック・健診</h3>
+        <p>8コース / オプション / 予約 / FAQ</p>
+        <span class="arrow">&#8594;</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== 診療科・専門医療 ===== -->
+  <div class="section">
+    <div class="section-label"><span>DEPARTMENTS &amp; SPECIALTIES</span><div class="line"></div></div>
+    <div class="grid grid-3">
+      <a href="department-list.html" class="card">
+        <span class="tag tag-purple">DEPT</span>
+        <div class="icon">&#129658;</div>
+        <h3>診療科一覧</h3>
+        <p>内科12科 / 外科13科 / その他8科 / 中央診療5部門</p>
+        <span class="arrow">&#8594;</span>
+      </a>
+      <a href="department-detail.html" class="card">
+        <span class="tag tag-purple">DEPT</span>
+        <div class="icon">&#128138;</div>
+        <h3>診療科詳細（循環器内科）</h3>
+        <p>ドクター / 担当表 / 実績 / 専門治療</p>
+        <span class="arrow">&#8594;</span>
+      </a>
+      <a href="center-detail.html" class="card">
+        <span class="tag tag-purple">CENTER</span>
+        <div class="icon">&#9877;</div>
+        <h3>センター詳細（脳卒中）</h3>
+        <p>特徴 / 実績 / 設備 / ドクター / CTA</p>
+        <span class="arrow">&#8594;</span>
+      </a>
+    </div>
+    <div class="grid grid-3" style="margin-top:14px">
+      <a href="special-top.html" class="card">
+        <span class="tag tag-purple">SPECIAL</span>
+        <div class="icon">&#128269;</div>
+        <h3>専門医療トップ</h3>
+        <p>専門外来10 / 医療分野4 / インタビュー11</p>
+        <span class="arrow">&#8594;</span>
+      </a>
+      <a href="special-interview.html" class="card">
+        <span class="tag tag-purple">SPECIAL</span>
+        <div class="icon">&#127908;</div>
+        <h3>ドクターインタビュー</h3>
+        <p>大腸がん5つのポイント（記事テンプレート）</p>
+        <span class="arrow">&#8594;</span>
+      </a>
+      <a href="area-top.html" class="card">
+        <span class="tag tag-orange">AREA</span>
+        <div class="icon">&#129309;</div>
+        <h3>医療連携・紹介</h3>
+        <p>一般の方 / 医療機関の方 / 1DAY / FAX</p>
+        <span class="arrow">&#8594;</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== 病院紹介・情報 ===== -->
+  <div class="section">
+    <div class="section-label"><span>HOSPITAL INFO &amp; NEWS</span><div class="line"></div></div>
+    <div class="grid grid-3">
+      <a href="about-top.html" class="card">
+        <span class="tag tag-orange">ABOUT</span>
+        <div class="icon">&#127970;</div>
+        <h3>病院紹介トップ</h3>
+        <p>概要 / 沿革 / 取り組み / 医療体制 / コラム</p>
+        <span class="arrow">&#8594;</span>
+      </a>
+      <a href="about-ward.html" class="card">
+        <span class="tag tag-orange">ABOUT</span>
+        <div class="icon">&#127959;</div>
+        <h3>病棟のご案内</h3>
+        <p>A棟8F + B棟8F + SCU / 手術室 / ICU</p>
+        <span class="arrow">&#8594;</span>
+      </a>
+      <a href="news-list.html" class="card">
+        <span class="tag tag-orange">NEWS</span>
+        <div class="icon">&#128240;</div>
+        <h3>ニュース一覧</h3>
+        <p>20件 / 6カテゴリタブ / ページネーション</p>
+        <span class="arrow">&#8594;</span>
+      </a>
+    </div>
+    <div class="grid grid-3" style="margin-top:14px">
+      <a href="news-detail.html" class="card">
+        <span class="tag tag-orange">NEWS</span>
+        <div class="icon">&#128196;</div>
+        <h3>ニュース詳細</h3>
+        <p>一宮西線バス（記事テンプレート）</p>
+        <span class="arrow">&#8594;</span>
+      </a>
+      <a href="column-detail.html" class="card">
+        <span class="tag tag-orange">COLUMN</span>
+        <div class="icon">&#128221;</div>
+        <h3>コラム記事詳細</h3>
+        <p>健康のつボ! 脳卒中（全13回シリーズ）</p>
+        <span class="arrow">&#8594;</span>
+      </a>
+      <a href="seminar.html" class="card">
+        <span class="tag tag-orange">SEMINAR</span>
+        <div class="icon">&#127891;</div>
+        <h3>市民公開講座</h3>
+        <p>年度別一覧 / 申込 / アーカイブ / YouTube</p>
+        <span class="arrow">&#8594;</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== 採用情報 ===== -->
+  <div class="section">
+    <div class="section-label"><span>RECRUITMENT</span><div class="line"></div></div>
+    <div class="grid grid-3">
+      <a href="recruit-top.html" class="card">
+        <span class="tag tag-pink">RECRUIT</span>
+        <div class="icon">&#128101;</div>
+        <h3>採用情報トップ</h3>
+        <p>600床 / 33科 / 手術10,000件超 / 4職種</p>
+        <span class="arrow">&#8594;</span>
+      </a>
+      <a href="nurse.html" class="card">
+        <span class="tag tag-pink">RECRUIT</span>
+        <div class="icon">&#128105;&#8205;&#9877;</div>
+        <h3>看護師採用</h3>
+        <p>看護部 / 教育 / 福利厚生 / 募集要項</p>
+        <span class="arrow">&#8594;</span>
+      </a>
+      <a href="resident.html" class="card">
+        <span class="tag tag-pink">RECRUIT</span>
+        <div class="icon">&#128104;&#8205;&#127891;</div>
+        <h3>臨床研修医募集</h3>
+        <p>プログラム / タイムライン / マッチング</p>
+        <span class="arrow">&#8594;</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== Full Sitemap Tree ===== -->
+  <div class="section">
+    <div class="section-label"><span>FULL SITEMAP</span><div class="line"></div></div>
+    <div class="grid grid-3">
+      <div class="sitemap-section">
+        <h4>ご利用案内</h4>
+        <div class="tree">
+          <a href="guide-top.html"><span class="dot"></span>ご利用案内トップ</a>
+          <a href="guide-outpatient.html"><span class="dot"></span>外来受診の方</a>
+          <a href="guide-inpatient.html"><span class="dot"></span>入院・お見舞いの方</a>
+          <a href="access.html"><span class="dot"></span>交通アクセス・駐車場</a>
+          <a href="dock.html"><span class="dot"></span>人間ドック・健康診断</a>
+        </div>
+        <h4 style="margin-top:16px">診療科紹介</h4>
+        <div class="tree">
+          <a href="department-list.html"><span class="dot"></span>診療科一覧（33科）</a>
+          <a href="department-detail.html"><span class="dot"></span>循環器内科（詳細例）</a>
+          <a href="center-detail.html"><span class="dot"></span>脳卒中センター（詳細例）</a>
+        </div>
+      </div>
+      <div class="sitemap-section">
+        <h4>専門医療・連携</h4>
+        <div class="tree">
+          <a href="special-top.html"><span class="dot"></span>専門医療トップ</a>
+          <a href="special-interview.html"><span class="dot"></span>ドクターインタビュー</a>
+          <a href="area-top.html"><span class="dot"></span>医療連携・紹介</a>
+        </div>
+        <h4 style="margin-top:16px">病院紹介</h4>
+        <div class="tree">
+          <a href="about-top.html"><span class="dot"></span>病院紹介トップ</a>
+          <a href="about-ward.html"><span class="dot"></span>病棟のご案内</a>
+          <a href="news-list.html"><span class="dot"></span>ニュース一覧</a>
+          <a href="news-detail.html"><span class="dot"></span>ニュース詳細</a>
+          <a href="column-detail.html"><span class="dot"></span>コラム記事</a>
+          <a href="seminar.html"><span class="dot"></span>市民公開講座</a>
+        </div>
+      </div>
+      <div class="sitemap-section">
+        <h4>採用情報</h4>
+        <div class="tree">
+          <a href="recruit-top.html"><span class="dot"></span>採用情報トップ</a>
+          <a href="nurse.html"><span class="dot"></span>看護師採用</a>
+          <a href="resident.html"><span class="dot"></span>臨床研修医募集</a>
+        </div>
+        <h4 style="margin-top:16px">リソース</h4>
+        <div class="tree">
+          <a href="../sitemap.md"><span class="dot"></span>詳細サイトマップ (MD)</a>
+          <a href="../pages-list.csv"><span class="dot"></span>全URL一覧 (CSV)</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== Footer ===== -->
+<div class="site-footer">
+  <p style="margin-bottom:8px">社会医療法人杏嶺会 一宮西病院 ワイヤーフレーム</p>
+  <p>
+    <a href="top.html">TOP</a>
+    <a href="guide-top.html">ご利用案内</a>
+    <a href="department-list.html">診療科</a>
+    <a href="special-top.html">専門医療</a>
+    <a href="about-top.html">病院紹介</a>
+    <a href="recruit-top.html">採用</a>
+  </p>
+</div>
+
 </body>
 </html>
