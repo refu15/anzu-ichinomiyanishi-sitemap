@@ -802,122 +802,258 @@ footer{position:relative;z-index:70;padding-top:150px}
 .footer-sp-nav__link{display:block;padding:14px 0;color:#fff;font-size:15px}
 
 /* =============================================================================
-   SP (Mobile) Comprehensive Responsive
+   Tablet (768px - 1199px)
+============================================================================= */
+@media screen and (max-width:1199px) and (min-width:768px){
+  /* --- Header --- */
+  header{min-width:0!important;height:70px}
+  .header__inner{height:70px}
+  .header-main__logo{width:120px;margin-top:16px;margin-left:20px}
+  .gnavi-area{margin-top:24px;margin-right:10px}
+  #gnavi{width:auto;max-width:calc(100% - 10px)}
+  #gnavi>ul{gap:4px}
+  #gnavi>ul>li>a>span{font-size:12px;letter-spacing:0;white-space:nowrap}
+  .header__sub{padding-right:200px;width:calc(100% - 120px)}
+  .header-sub-nav__lists{width:200px;height:70px}
+  .header-sub-nav__list{width:100px;height:70px}
+  .header-sub-nav__link{padding-bottom:16px}
+  .header-sub-nav__link span{font-size:11px}
+
+  /* --- Layout --- */
+  .main-container{min-width:0!important;padding-left:20px!important;padding-right:20px!important;padding-top:70px}
+  .home .mainvisual-area{min-width:0!important}
+  .home-target{width:auto;padding:0 20px}
+
+  /* --- Target cards (shared for all tablet) --- */
+  .target__list{gap:6px}
+  .target-item__link{height:auto!important;padding:20px 8px 14px!important;background-size:32px auto!important;background-position:center top 18px!important}
+  .target-item__link::before{content:none!important}
+  .target-item__body{padding-top:40px}
+  .target__item--item1 .target-item__menu{position:relative}
+  .target__item--item1 .target-item-menu__item span{font-size:11px}
+
+  /* --- Other sections --- */
+  .home .important-list .news-list-in{width:auto}
+  .pickup-area-in{width:auto;padding:0 20px}
+  .news-area-in{width:auto;padding:0 20px}
+  .column-area{width:auto;padding:0 20px}
+  .center-area{width:auto;padding:0 20px}
+  .home-recruit{width:auto;padding:0 20px}
+  .home .banner-area-in{width:auto;padding:0 20px}
+  #wrapper-under{width:auto!important}
+  #main{width:calc(100% - 270px)!important}
+  .column2-11{gap:20px}
+  .column2-11 .column-left,.column2-11 .column-right{width:calc((100% - 20px)/2)}
+  #wrapper-under .junction .junction-list li a{font-size:14px}
+  .footer-group{width:auto}
+  .footer-group__list{width:auto}
+  .footer-middle-in{width:auto;padding:0 20px}
+  .footer__nav-wrapper{width:auto;padding:0 20px}
+}
+
+/* --- Tablet narrow (768px-899px): Target cards 2x2 grid --- */
+@media screen and (max-width:899px) and (min-width:768px){
+  .target__list{display:grid!important;grid-template-columns:1fr 1fr;gap:6px}
+  .target__item{width:auto!important;height:auto;box-shadow:4px 4px 12px rgba(0,18,25,.06)}
+  .target-item__t1{font-size:14px;line-height:1.4}
+  .target-item__t2{font-size:10px}
+  #gnavi>ul>li>a>span{font-size:11px}
+}
+
+/* --- Tablet wide (900px-1199px): Target cards 4 columns, smaller text --- */
+@media screen and (max-width:1199px) and (min-width:900px){
+  .target__item{width:calc(25% - 5px);height:auto;box-shadow:4px 4px 12px rgba(0,18,25,.06)}
+  .target-item__t1{font-size:13px;line-height:1.4}
+  .target-item__t2{font-size:9px}
+  .target-item__body{padding-top:36px}
+}
+
+/* =============================================================================
+   SP (Mobile) max-width:767px
 ============================================================================= */
 @media screen and (max-width:767px){
-  /* Header SP */
-  header{height:60px;min-width:0;position:relative;background:rgba(255,255,255,.95)}
+  /* === Global SP === */
+  header{height:60px;min-width:0!important;position:relative;background:rgba(255,255,255,.95);backdrop-filter:none}
+  .home header{background:rgba(255,255,255,.95)}
   .header__inner{height:60px}
   .header__main{width:auto}
   .header-main__logo{width:110px;margin-top:16px;margin-left:16px}
   .header__sub{display:none}
-
-  /* Breadcrumb SP */
   .bread-area{padding:12px 0}
-  .bread-area ul{padding:0 16px;font-size:12px}
-
-  /* Main Container SP */
-  .main-container{padding-top:0!important;min-width:0!important}
+  .bread-area ul{width:auto;padding:0 16px;font-size:12px;gap:2px}
+  .main-container,.main-container.clearfix{
+    padding:0!important;min-width:0!important;width:100%!important;
+  }
+  .main-container::before{content:none!important}
   .wrapper-area.underbg{padding-top:10px}
 
-  /* 2-column -> single column */
+  /* === Single column === */
   #main{width:auto!important;float:none!important;overflow:visible!important;padding:0 16px}
   #side{width:auto!important;float:none!important;margin-top:40px;padding:0 16px}
+  #wrapper-under{width:auto!important}
 
-  /* h1 */
+  /* === Under page === */
   .h1-area{padding:0 0 16px;margin-bottom:20px}
   .h1-area h1{font-size:20px}
-
-  /* Footer SP */
-  .footer-group{width:auto;padding:0 16px}
-  .footer-group__list{width:auto;flex-wrap:wrap;gap:8px}
-  .footer-group__item{width:calc(50% - 4px);margin-bottom:8px}
-  .footer-group__title{font-size:24px}
-  .footer-group-item__description{display:none}
-  .footer-group-item__menu{display:none}
-  .footer-middle{padding-top:80px;padding-bottom:40px}
-  .footer-middle-in{width:auto;display:block;padding:0 16px;text-align:center}
-  .footer-main{width:auto}
-  .footer-main__list{display:block;text-align:center}
-  .footer-main__brand{width:140px;margin:0 auto}
-  .footer-main__meta{margin-left:0;margin-top:16px;text-align:center}
-  .footer-main__info{flex-direction:column;align-items:center;gap:12px}
-  .footer-sub{margin-top:20px;justify-content:center}
-  .footer-sub__menu{justify-content:center}
-  .footer__nav-wrapper{flex-wrap:wrap;gap:8px 12px;padding:0 16px;justify-content:center}
-  .footer-nav__link{font-size:12px}
-  footer{padding-top:60px}
-  .home footer{padding-top:60px}
-  .footer__floating-btn-wrapper{bottom:60px}
-
-  /* SP footer floating nav visible */
-  .footer-floating-menu{display:block;position:fixed;bottom:0;left:0;right:0;z-index:100}
-
-  /* Home sections SP */
-  .home .important-section{padding:40px 16px}
-  .home .important-list .news-list-in{width:auto;min-width:0}
-  .home .important-list .news-list-in dl{padding:12px 0;display:block}
-  .home .important-list .news-list-in dl dt{display:block;width:auto;padding-bottom:4px}
-  .home .important-list .news-list-in dl dd{display:block;width:auto;padding-left:0}
-  .home .important-area .list-link{width:auto;margin:24px 16px 0}
-  .pickup-section{padding:40px 16px}
-  .pickup-area-in{width:auto}
-  .pickup-box{width:100%}
-  .pickup-box .img-area{width:110px}
-  .pickup-box .title-area{font-size:13px}
-  .news-section{padding:40px 16px}
-  .news-area-in{width:auto}
-  .news-area-in .title h2{font-size:36px}
-  .news-tab-list{flex-wrap:wrap;gap:4px}
-  .news-tab-list h3 a{padding:8px 12px;font-size:12px}
-  .news-list .news-list-in dl{display:block;padding:14px 0}
-  .news-list .news-list-in dl dt{display:block;width:auto;margin-bottom:4px}
-  .news-list .news-list-in dl dd{padding-left:0}
-  .column-section{padding:40px 16px}
-  .column-area{width:auto}
-  .column-list{flex-direction:column}
-  .column-item{width:100%}
-  .center-section{padding:40px 16px}
-  .center-area{width:auto}
-  .center-item{width:calc(50% - 8px)}
-  .recruit-section{padding:40px 16px}
-  .home-recruit{width:auto}
-  .recruit__item{width:calc(50% - 8px)}
-  .recruit__button{width:auto;margin:24px 16px 0}
-  .banner-section{padding:30px 16px}
-  .home .banner-area-in{width:auto}
-  .home .banner-area-in ul li{width:100%}
-
-  /* Target section SP */
-  .target-section{margin-top:-50px}
-  .home-target{width:auto;padding:0 16px}
-  .target__list{flex-wrap:wrap;gap:4px}
-  .target__item{width:calc(50% - 2px);height:auto}
-  .target-item__link{height:120px;padding-top:28px}
-  .target-item__link::before{content:none}
-  .target-item__t1{font-size:14px}
-  .target-item__t2{display:none}
-  .target__item--item1 .target-item__menu{display:flex}
-  .target__item--item1 .target-item-menu__item a{height:32px}
-  .target__item--item1 .target-item-menu__item span{font-size:11px}
-
-  /* Slider SP */
-  .mainvisual-area{display:none}
-  .mainvisual-sp-area{display:block}
-
-  /* Home title SP */
-  .home-title{font-size:32px}
-  .home-subtitle{font-size:13px}
-
-  /* Under page junction SP */
+  .column2-11{display:block!important;gap:0!important}
+  .column2-11 .column-left,.column2-11 .column-right{width:auto!important}
   #wrapper-under .junction{margin-bottom:20px;padding-top:10px}
 
-  /* Side banners in SP */
-  #side .banner-area ul{padding-top:20px}
-  #side .banner-area img{max-width:100%}
+  /* === Footer SP === */
+  footer{padding-top:60px!important}
+  .home footer{padding-top:60px!important}
+  .footer-group{width:auto;padding:0 16px}
+  .footer-group__title-wrapper{top:-30px}
+  .footer-group__title{font-size:22px}
+  .footer-group__subtitle{font-size:11px}
+  .footer-group__list{width:auto!important;flex-wrap:wrap;gap:6px;bottom:-40px;margin:-50px auto 0}
+  .footer-group__item{width:calc(33.333% - 4px)!important;margin-bottom:0}
+  .footer-group-item__image-wrapper{margin-bottom:6px}
+  .footer-group-item__title{font-size:11px;margin-bottom:2px}
+  .footer-group-item__description{display:none}
+  .footer-group-item__menu{display:none}
+  .footer-middle{padding-top:70px!important;padding-bottom:40px}
+  .footer-middle-in{width:auto!important;display:block;padding:0 16px;text-align:center}
+  .footer-main{width:auto}
+  .footer-main__list{display:block;text-align:center}
+  .footer-main__brand{width:130px;margin:0 auto}
+  .footer-main__meta{margin-left:0;margin-top:14px;text-align:center}
+  .footer-main__address{font-size:12px}
+  .footer-main__info{flex-direction:column;align-items:center;gap:10px}
+  .footer-meta__tel a{font-size:16px}
+  .footer-sns__list{gap:8px}
+  .footer-sns__list li a img{width:26px;height:26px}
+  .footer-sub{margin-top:16px;display:flex;justify-content:center}
+  .footer-sub__menu{gap:12px;justify-content:center;flex-wrap:wrap}
+  .footer-sub__menu li a{font-size:12px}
+  .footer-under{padding:16px 0}
+  .footer__nav-wrapper{width:auto!important;flex-wrap:wrap;gap:6px 10px;padding:0 16px;justify-content:center}
+  .footer-nav__link{font-size:11px}
+  .footer__copy{font-size:11px;padding:14px 0 60px}
+  .footer__floating-btn-wrapper{bottom:60px;right:16px}
 
-  /* lnavi visible on SP as accordion-like */
-  .lnavi-area{display:block!important;margin-bottom:20px}
-  .lnavi-area .category a{font-size:16px;padding:0 10px 16px}
-  .lnavi-area .second>li>a{font-size:14px;padding:16px 5px 15px 30px;background-position:left 4px top 18px}
+  /* === SP floating menu === */
+  .footer-floating-menu{display:block;position:fixed;bottom:0;left:0;right:0;z-index:100}
+
+  /* === HOME: Slider === */
+  .mainvisual-area{display:none!important}
+  .mainvisual-sp-area{display:block!important}
+  .mainvisual-sp__tel-wrapper{display:none}
+
+  /* === HOME: Target cards === */
+  .target-section{margin-top:0!important;padding:16px}
+  .home-target{width:auto!important;padding:0}
+  .target__list{display:grid!important;grid-template-columns:1fr 1fr;gap:4px}
+  .target__item{width:auto!important;height:auto!important;box-shadow:4px 4px 12px rgba(0,18,25,.06);overflow:hidden}
+  .target-item__link{
+    height:auto!important;padding:14px 6px 12px!important;
+    flex-direction:column;background-image:none!important;
+  }
+  .target__item--item1 .target-item__link{padding-bottom:0!important}
+  .target-item__link::before{content:none!important}
+  .target-item__body{padding-top:0}
+  .target-item__t1{font-size:11px!important;line-height:1.4;background:none!important;padding:0!important;white-space:normal;overflow-wrap:break-word}
+  .target-item__t2{display:block!important;font-size:9px;margin-top:3px}
+  .target__item--item1 .target-item__menu{position:relative!important;display:flex;margin-top:8px}
+  .target__item--item1 .target-item-menu__item{width:50%}
+  .target__item--item1 .target-item-menu__item a{height:28px;font-size:11px}
+  .target__item--item1 .target-item-menu__item span{font-size:10px!important}
+
+  /* === HOME: Important news === */
+  .home .important-section{padding:30px 16px}
+  .home .important-area-in h2{font-size:18px;padding-top:34px}
+  .home .important-area-in h2::before{width:22px;height:22px;background-size:22px auto;left:calc(50% - 11px)}
+  .home .important-list{padding:4px 0}
+  .home .important-list .news-list-in{width:auto!important;min-width:0}
+  .home .important-list .news-list-in dl{padding:10px 0;display:block}
+  .home .important-list .news-list-in dl dt{display:block;width:auto;padding-bottom:2px;font-size:13px}
+  .home .important-list .news-list-in dl dd{display:block;width:auto;padding-left:0;font-size:13px}
+  .home .important-area .list-link{width:auto;margin:20px auto 0}
+  .home .important-area .list-link a{font-size:14px;padding-bottom:16px}
+
+  /* === HOME: Pickup === */
+  .pickup-section{padding:30px 16px}
+  .pickup-area-in{width:auto!important;gap:12px}
+  .pickup-box{width:100%!important}
+  .pickup-box .box{border-radius:6px}
+  .pickup-box .img-area{width:100px;min-height:80px}
+  .pickup-box .title-area{font-size:12px;line-height:1.5}
+
+  /* === HOME: News === */
+  .news-section{padding:30px 16px}
+  .news-area-in{width:auto!important}
+  .news-area-in .title h2{font-size:30px}
+  .news-area-in .title .subtitle{font-size:13px}
+  .news-tab-list{flex-wrap:wrap;gap:3px;margin-top:16px}
+  .news-tab-list h3 a{padding:6px 10px;font-size:11px}
+  .news-list .news-list-in dl{display:block;padding:12px 10px}
+  .news-list .news-list-in dl dt{display:block;width:auto;margin-bottom:2px;font-size:12px}
+  .news-list .news-list-in dl dd{padding-left:0;font-size:13px}
+
+  /* === HOME: Column === */
+  .column-section{padding:30px 16px}
+  .column-area{width:auto!important}
+  .column-list{flex-direction:column;gap:16px}
+  .column-item{width:100%!important}
+  .column-item .img-area{height:140px}
+
+  /* === HOME: Center === */
+  .center-section{padding:30px 16px}
+  .center-area{width:auto!important}
+  .center-list{gap:8px}
+  .center-item{width:calc(50% - 4px)!important;padding:16px 10px}
+  .center-item .name{font-size:13px}
+  .center-item .name-en{font-size:10px}
+
+  /* === HOME: Recruit === */
+  .recruit-section{padding:30px 16px}
+  .home-recruit{width:auto!important}
+  .recruit__list{gap:8px}
+  .recruit__item{width:calc(50% - 4px)!important;padding:20px 12px}
+  .recruit__item .ttl{font-size:14px}
+  .recruit__item .ttl-en{font-size:10px}
+  .recruit__button{width:auto;margin:20px 0 0;padding:12px 0;font-size:14px}
+
+  /* === HOME: Banner === */
+  .banner-section{padding:20px 16px}
+  .home .banner-area-in{width:auto!important}
+  .home .banner-area-in ul{gap:8px}
+  .home .banner-area-in ul li{width:100%!important}
+
+  /* === HOME: Titles === */
+  .home-title{font-size:28px!important}
+  .home-subtitle{font-size:12px!important}
+  .pickup__title-wrapper,.home-title-wrapper{margin-bottom:0}
+
+  /* === Side SP === */
+  #side .banner-area ul{padding-top:16px}
+  #side .banner-area img{max-width:100%}
+  .lnavi-area{display:block!important;margin-bottom:16px}
+  .lnavi-area .category a{font-size:16px;padding:0 10px 14px}
+  .lnavi-area .second>li>a{font-size:14px;padding:14px 5px 13px 28px;background-position:left 4px top 16px}
+
+  /* === Card grid SP === */
+  .card-grid{gap:10px}
+  .card-grid.col-2 .card-item,.card-grid.col-3 .card-item,.card-grid.col-4 .card-item{width:100%!important}
+
+  /* === Doctor card SP === */
+  .doctor-card{flex-direction:column;align-items:center;text-align:center;padding:16px;gap:12px}
+  .doctor-photo{width:80px;height:105px}
+
+  /* === Table SP === */
+  .main-contents table{font-size:13px}
+  .main-contents table th,.main-contents table td{padding:8px 10px}
+}
+
+/* =============================================================================
+   Extra Small SP (320px etc.) max-width:350px
+============================================================================= */
+@media screen and (max-width:350px){
+  .target-section{padding:10px}
+  .target__list{gap:3px!important}
+  .target-item__link{padding:10px 4px 10px!important}
+  .target-item__t1{font-size:10px!important}
+  .target-item__t2{font-size:8px}
+  .target__item--item1 .target-item-menu__item a{height:24px}
+  .target__item--item1 .target-item-menu__item span{font-size:9px!important}
 }
