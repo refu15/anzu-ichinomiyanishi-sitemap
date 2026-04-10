@@ -85,6 +85,10 @@ a[href*="tel:"]{pointer-events:none;cursor:default;text-decoration:none;display:
   .main-container::before{content:none!important}
 }
 
+/* Prevent horizontal overflow on all pages */
+html,body{max-width:100%;overflow-x:hidden}
+#body-in{overflow-x:hidden}
+
 #main{width:890px;float:left;overflow:hidden}
 #side{width:240px;float:right}
 @media screen and (max-width:767px){
@@ -463,12 +467,13 @@ header{
 ============================================================================= */
 .banner-section{padding:80px 0}
 @media screen and (max-width:767px){.banner-section{padding:40px 20px}}
-.banner-area-in{width:1200px;margin:0 auto}
-@media screen and (max-width:767px){.banner-area-in{width:auto}}
-.banner-area-in ul{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-.banner-area-in ul li{width:calc(33.333% - 8px)}
-@media screen and (max-width:767px){.banner-area-in ul li{width:100%}}
-.banner-area-in ul li img{width:100%;border-radius:4px;display:block}
+/* Home banner area (full width) */
+.home .banner-area-in{width:1200px;margin:0 auto}
+@media screen and (max-width:767px){.home .banner-area-in{width:auto}}
+.home .banner-area-in ul{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.home .banner-area-in ul li{width:calc(33.333% - 8px)}
+@media screen and (max-width:767px){.home .banner-area-in ul li{width:100%}}
+.home .banner-area-in ul li img{width:100%;border-radius:4px;display:block}
 
 /* =============================================================================
    Footer
@@ -795,3 +800,124 @@ footer{position:relative;z-index:70;padding-top:150px}
 .footer__sp-nav-wrapper.open{display:block}
 .footer-sp-nav__lists li{border-bottom:1px solid rgba(255,255,255,.1)}
 .footer-sp-nav__link{display:block;padding:14px 0;color:#fff;font-size:15px}
+
+/* =============================================================================
+   SP (Mobile) Comprehensive Responsive
+============================================================================= */
+@media screen and (max-width:767px){
+  /* Header SP */
+  header{height:60px;min-width:0;position:relative;background:rgba(255,255,255,.95)}
+  .header__inner{height:60px}
+  .header__main{width:auto}
+  .header-main__logo{width:110px;margin-top:16px;margin-left:16px}
+  .header__sub{display:none}
+
+  /* Breadcrumb SP */
+  .bread-area{padding:12px 0}
+  .bread-area ul{padding:0 16px;font-size:12px}
+
+  /* Main Container SP */
+  .main-container{padding-top:0!important;min-width:0!important}
+  .wrapper-area.underbg{padding-top:10px}
+
+  /* 2-column -> single column */
+  #main{width:auto!important;float:none!important;overflow:visible!important;padding:0 16px}
+  #side{width:auto!important;float:none!important;margin-top:40px;padding:0 16px}
+
+  /* h1 */
+  .h1-area{padding:0 0 16px;margin-bottom:20px}
+  .h1-area h1{font-size:20px}
+
+  /* Footer SP */
+  .footer-group{width:auto;padding:0 16px}
+  .footer-group__list{width:auto;flex-wrap:wrap;gap:8px}
+  .footer-group__item{width:calc(50% - 4px);margin-bottom:8px}
+  .footer-group__title{font-size:24px}
+  .footer-group-item__description{display:none}
+  .footer-group-item__menu{display:none}
+  .footer-middle{padding-top:80px;padding-bottom:40px}
+  .footer-middle-in{width:auto;display:block;padding:0 16px;text-align:center}
+  .footer-main{width:auto}
+  .footer-main__list{display:block;text-align:center}
+  .footer-main__brand{width:140px;margin:0 auto}
+  .footer-main__meta{margin-left:0;margin-top:16px;text-align:center}
+  .footer-main__info{flex-direction:column;align-items:center;gap:12px}
+  .footer-sub{margin-top:20px;justify-content:center}
+  .footer-sub__menu{justify-content:center}
+  .footer__nav-wrapper{flex-wrap:wrap;gap:8px 12px;padding:0 16px;justify-content:center}
+  .footer-nav__link{font-size:12px}
+  footer{padding-top:60px}
+  .home footer{padding-top:60px}
+  .footer__floating-btn-wrapper{bottom:60px}
+
+  /* SP footer floating nav visible */
+  .footer-floating-menu{display:block;position:fixed;bottom:0;left:0;right:0;z-index:100}
+
+  /* Home sections SP */
+  .home .important-section{padding:40px 16px}
+  .home .important-list .news-list-in{width:auto;min-width:0}
+  .home .important-list .news-list-in dl{padding:12px 0;display:block}
+  .home .important-list .news-list-in dl dt{display:block;width:auto;padding-bottom:4px}
+  .home .important-list .news-list-in dl dd{display:block;width:auto;padding-left:0}
+  .home .important-area .list-link{width:auto;margin:24px 16px 0}
+  .pickup-section{padding:40px 16px}
+  .pickup-area-in{width:auto}
+  .pickup-box{width:100%}
+  .pickup-box .img-area{width:110px}
+  .pickup-box .title-area{font-size:13px}
+  .news-section{padding:40px 16px}
+  .news-area-in{width:auto}
+  .news-area-in .title h2{font-size:36px}
+  .news-tab-list{flex-wrap:wrap;gap:4px}
+  .news-tab-list h3 a{padding:8px 12px;font-size:12px}
+  .news-list .news-list-in dl{display:block;padding:14px 0}
+  .news-list .news-list-in dl dt{display:block;width:auto;margin-bottom:4px}
+  .news-list .news-list-in dl dd{padding-left:0}
+  .column-section{padding:40px 16px}
+  .column-area{width:auto}
+  .column-list{flex-direction:column}
+  .column-item{width:100%}
+  .center-section{padding:40px 16px}
+  .center-area{width:auto}
+  .center-item{width:calc(50% - 8px)}
+  .recruit-section{padding:40px 16px}
+  .home-recruit{width:auto}
+  .recruit__item{width:calc(50% - 8px)}
+  .recruit__button{width:auto;margin:24px 16px 0}
+  .banner-section{padding:30px 16px}
+  .home .banner-area-in{width:auto}
+  .home .banner-area-in ul li{width:100%}
+
+  /* Target section SP */
+  .target-section{margin-top:-50px}
+  .home-target{width:auto;padding:0 16px}
+  .target__list{flex-wrap:wrap;gap:4px}
+  .target__item{width:calc(50% - 2px);height:auto}
+  .target-item__link{height:120px;padding-top:28px}
+  .target-item__link::before{content:none}
+  .target-item__t1{font-size:14px}
+  .target-item__t2{display:none}
+  .target__item--item1 .target-item__menu{display:flex}
+  .target__item--item1 .target-item-menu__item a{height:32px}
+  .target__item--item1 .target-item-menu__item span{font-size:11px}
+
+  /* Slider SP */
+  .mainvisual-area{display:none}
+  .mainvisual-sp-area{display:block}
+
+  /* Home title SP */
+  .home-title{font-size:32px}
+  .home-subtitle{font-size:13px}
+
+  /* Under page junction SP */
+  #wrapper-under .junction{margin-bottom:20px;padding-top:10px}
+
+  /* Side banners in SP */
+  #side .banner-area ul{padding-top:20px}
+  #side .banner-area img{max-width:100%}
+
+  /* lnavi visible on SP as accordion-like */
+  .lnavi-area{display:block!important;margin-bottom:20px}
+  .lnavi-area .category a{font-size:16px;padding:0 10px 16px}
+  .lnavi-area .second>li>a{font-size:14px;padding:16px 5px 15px 30px;background-position:left 4px top 18px}
+}
