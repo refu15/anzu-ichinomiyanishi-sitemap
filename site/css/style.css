@@ -710,6 +710,76 @@ footer{position:relative;z-index:70;padding-top:150px}
 .pagination a:hover{background:#4F819F;color:#fff;opacity:1!important}
 .pagination span.current{background:#4F819F;color:#fff}
 
+/* Local Navigation (Sidebar)
+============================================================================= */
+@media screen and (max-width:767px){.lnavi-area{display:none}}
+.lnavi-area .category-area{margin-bottom:0}
+.lnavi-area .category a{
+  display:block;padding:0 20px 26px 20px;color:#36637E;
+  font-family:"Noto Serif JP",serif;font-size:20px;font-weight:400;
+  line-height:1.5;text-align:center;text-decoration:none;border-bottom:1px solid #1F5B80;
+}
+@media(hover:hover) and (min-width:769px){.lnavi-area .category a:hover{opacity:1!important;color:#BFB77D}}
+.lnavi-area .lnavi a{display:block;color:#022634;text-decoration:none;position:relative}
+.lnavi-area .second>li{border-bottom:1px solid #D0E0E6;padding:0}
+.lnavi-area .second>li>a{
+  padding:21px 5px 20px 40px;font-size:16px;
+  background-image:url("https://www.anzu.or.jp/ichinomiyanishi/common/image/lnavi-ar001.svg");
+  background-repeat:no-repeat;background-position:left 6px top 24px;
+}
+.lnavi-area .second>li>a:hover,.lnavi-area .second>.current>a{
+  opacity:1!important;
+  background-image:url("https://www.anzu.or.jp/ichinomiyanishi/common/image/lnavi-ar001-on.svg");
+  color:#3289BF;
+}
+#side .banner-area ul{padding-top:50px}
+@media screen and (max-width:767px){#side .banner-area ul{width:auto;margin-left:0;padding-top:40px}}
+#side .banner-area li{margin-bottom:20px;line-height:1;text-align:center}
+#side .banner-area a{display:block}
+#side .banner-area img{max-width:240px}
+
+/* Junction List (Under pages)
+============================================================================= */
+#wrapper-under .junction,#wrapper-under .junction-html{margin-bottom:35px;padding-top:25px}
+@media screen and (max-width:767px){#wrapper-under .junction,#wrapper-under .junction-html{margin-bottom:0;padding-top:0}}
+#wrapper-under .junction .junction-list li{border-bottom:1px solid #B9D5DF}
+#wrapper-under .junction .junction-list li a{
+  padding:15px 40px 15px 25px;display:block;position:relative;
+  text-decoration:none;color:#36637E;font-size:16px;font-weight:400;
+  background-image:url("https://www.anzu.or.jp/ichinomiyanishi/common/image/junction-ar002.svg");
+  background-repeat:no-repeat;background-position:right 20px top 27px;
+}
+@media(hover:hover) and (min-width:769px){
+  #wrapper-under .junction .junction-list li a:hover{opacity:1!important;background-color:#F6FAFC}
+}
+@media screen and (max-width:767px){
+  #wrapper-under .junction .junction-list li a{padding:18px 40px 18px 15px;background-position:right 20px top 29px}
+}
+
+/* Under page h1 area */
+.h1-area{padding:0 0 20px;margin-bottom:30px}
+.h1-area h1{font-family:"Noto Serif JP",serif;font-size:28px;font-weight:400;color:#022634}
+@media screen and (max-width:767px){.h1-area h1{font-size:22px}}
+
+/* Under page main image */
+.under-main-img{margin-bottom:30px}
+.under-main-img img{width:100%;display:block}
+
+/* Under page 2-column layout */
+#wrapper-under{display:flex;gap:0}
+#wrapper-under article{flex:1;min-width:0}
+@media screen and (max-width:767px){
+  #wrapper-under{display:block}
+}
+
+/* Column layout for junction */
+.column2-11{display:flex;gap:34px}
+.column2-11 .column-left,.column2-11 .column-right{width:calc((100% - 34px)/2)}
+@media screen and (max-width:767px){
+  .column2-11{display:block}
+  .column2-11 .column-left,.column2-11 .column-right{width:auto}
+}
+
 /* SP Footer floating menu */
 .footer-floating-menu{display:none}
 @media screen and (max-width:767px){.footer-floating-menu{display:block;position:fixed;bottom:0;left:0;right:0;z-index:100}}
