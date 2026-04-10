@@ -394,24 +394,7 @@ header{
 .news-list .news-list-in dl dt.ic004::before{background-color:#BFB77D}
 .news-list .news-list-in dl dt.ic005::before{background-color:#678A9D}
 
-/* =============================================================================
-   Home - Column (WEB Lectures)
-============================================================================= */
-.column-section{padding:100px 0}
-@media screen and (max-width:767px){.column-section{padding:50px 20px}}
-.column-area{width:1200px;margin:0 auto}
-@media screen and (max-width:767px){.column-area{width:auto}}
-.column-list{display:flex;flex-wrap:wrap;gap:24px;margin-top:40px}
-.column-item{width:calc(33.333% - 16px);background:#fff;border-radius:8px;overflow:hidden;box-shadow:4px 4px 16px rgba(0,18,25,.06)}
-@media screen and (max-width:767px){.column-item{width:100%}}
-.column-item .img-area{height:180px;overflow:hidden}
-.column-item .img-area img{width:100%;height:100%;object-fit:cover}
-.column-item .txt-area{padding:20px}
-.column-item .txt-area .cat{
-  display:inline-block;font-size:12px;color:#4F819F;font-weight:500;
-  border:1px solid #4F819F;border-radius:3px;padding:2px 8px;margin-bottom:8px;
-}
-.column-item .txt-area .ttl{font-size:15px;font-weight:600;line-height:1.6;color:#022634}
+/* Old column-list styles removed — now using column-slider (carousel) defined below banners */
 
 /* =============================================================================
    Home - Centers
@@ -461,6 +444,63 @@ header{
 }
 .recruit__button:hover{background:rgba(255,255,255,.1);opacity:1!important}
 .recruit-bg002{position:absolute;right:0;bottom:0;opacity:.15}
+
+/* =============================================================================
+   Home - Column Slider (Carousel)
+============================================================================= */
+.column-section{padding:100px 0;position:relative}
+@media screen and (max-width:767px){.column-section{padding:50px 0}}
+.column-area{width:1200px;margin:0 auto;position:relative}
+@media screen and (max-width:1199px){.column-area{width:auto;padding:0 20px}}
+@media screen and (max-width:767px){.column-area{padding:0 16px}}
+
+/* Slider container */
+.column-slider{margin-top:40px}
+@media screen and (max-width:767px){.column-slider{margin-top:24px}}
+.column-slider .column-item{
+  display:block;background:#fff;border-radius:8px;overflow:hidden;
+  box-shadow:4px 4px 16px rgba(0,18,25,.06);transition:all .3s;text-decoration:none;
+}
+.column-slider .column-item:hover{box-shadow:4px 4px 20px rgba(0,18,25,.12);opacity:1!important}
+.column-slider .column-item .img-area{height:200px;overflow:hidden}
+@media screen and (max-width:767px){.column-slider .column-item .img-area{height:160px}}
+.column-slider .column-item .img-area img{width:100%;height:100%;object-fit:cover;display:block}
+.column-slider .column-item .txt-area{padding:18px 20px 22px}
+@media screen and (max-width:767px){.column-slider .column-item .txt-area{padding:14px 16px 18px}}
+.column-slider .column-item .cat{
+  display:inline-block;font-size:12px;color:#4F819F;font-weight:500;
+  border:1px solid #4F819F;border-radius:3px;padding:2px 10px;margin-bottom:8px;
+}
+.column-slider .column-item .ttl{font-size:15px;font-weight:600;line-height:1.6;color:#022634}
+@media screen and (max-width:767px){.column-slider .column-item .ttl{font-size:14px}}
+
+/* bxSlider overrides for column carousel */
+.column-section .bx-wrapper{margin:0 auto;position:relative}
+.column-section .bx-wrapper .bx-viewport{overflow:hidden;border:none;box-shadow:none;background:transparent}
+.column-section .bx-wrapper .bx-pager{padding-top:24px;text-align:center}
+.column-section .bx-wrapper .bx-pager .bx-pager-item{display:inline-block}
+.column-section .bx-wrapper .bx-pager a{
+  display:inline-block;width:10px;height:10px;border-radius:50%;
+  background:#C8D8E0;margin:0 5px;text-indent:-999px;overflow:hidden;
+}
+.column-section .bx-wrapper .bx-pager a.active,.column-section .bx-wrapper .bx-pager a:hover{background:#4F819F}
+.column-section .bx-wrapper .bx-controls-direction a{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:10;
+  width:44px;height:44px;display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,.9);border-radius:50%;
+  box-shadow:0 2px 8px rgba(0,18,25,.12);transition:all .3s;
+  text-decoration:none;
+}
+.column-section .bx-wrapper .bx-controls-direction a:hover{background:#fff;box-shadow:0 4px 16px rgba(0,18,25,.2);opacity:1!important}
+.column-section .bx-wrapper .bx-prev{left:-22px}
+.column-section .bx-wrapper .bx-next{right:-22px}
+@media screen and (max-width:1250px){
+  .column-section .bx-wrapper .bx-prev{left:4px}
+  .column-section .bx-wrapper .bx-next{right:4px}
+}
+.column-slider-prev,.column-slider-next{
+  font-size:28px;line-height:1;color:#4F819F;font-weight:300;
+}
 
 /* =============================================================================
    Home - Banners
@@ -992,10 +1032,11 @@ footer{position:relative;z-index:70;padding-top:150px}
 
   /* === HOME: Column === */
   .column-section{padding:30px 16px}
-  .column-area{width:auto!important}
-  .column-list{flex-direction:column;gap:16px}
-  .column-item{width:100%!important}
-  .column-item .img-area{height:140px}
+  .column-area{width:auto!important;padding:0!important}
+  .column-section .bx-wrapper .bx-prev{left:2px}
+  .column-section .bx-wrapper .bx-next{right:2px}
+  .column-section .bx-wrapper .bx-controls-direction a{width:36px;height:36px}
+  .column-slider-prev,.column-slider-next{font-size:22px}
 
   /* === HOME: Center === */
   .center-section{padding:30px 16px}

@@ -63,6 +63,28 @@ $(function(){
     });
   }
 
+  // Column slider (carousel)
+  if($('#column-slider').length){
+    var spMode = $(window).width() <= 767;
+    $('#column-slider').bxSlider({
+      auto: true,
+      pause: 4000,
+      speed: 600,
+      mode: 'horizontal',
+      slideWidth: spMode ? 280 : 370,
+      minSlides: spMode ? 1 : 3,
+      maxSlides: spMode ? 1 : 3,
+      moveSlides: 1,
+      slideMargin: spMode ? 12 : 24,
+      pager: true,
+      controls: true,
+      nextText: '<span class="column-slider-next">&rsaquo;</span>',
+      prevText: '<span class="column-slider-prev">&lsaquo;</span>',
+      touchEnabled: true,
+      infiniteLoop: true
+    });
+  }
+
   // News tab switching
   var $tabs = $('.news-tab-list h3');
   var $contents = $('#tab-area > div');
