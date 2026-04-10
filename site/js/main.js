@@ -3,6 +3,7 @@ $(function(){
   var $header = $('header');
   var $logo = $('#js-header-main-logo');
   var logoDefault = $logo.attr('src');
+  var isHome = $('#body-in').hasClass('home');
   var logoFixed = (function(){
     var scripts = document.getElementsByTagName('script');
     for(var i = 0; i < scripts.length; i++){
@@ -14,16 +15,25 @@ $(function(){
     return '/css/header-logo002.svg';
   })();
 
+  // Non-home pages: always use logo002 and header-fixed
+  if(!isHome){
+    $header.addClass('header-fixed');
+    $logo.attr('src', logoFixed);
+  }
+
   $(window).on('scroll', function(){
-    if($(this).scrollTop() > 100){
-      if(!$header.hasClass('header-fixed')){
-        $header.addClass('header-fixed');
-        $logo.attr('src', logoFixed);
-      }
-    } else {
-      if($header.hasClass('header-fixed')){
-        $header.removeClass('header-fixed');
-        $logo.attr('src', logoDefault);
+    if(isHome){
+      // Home: swap logo on scroll
+      if($(this).scrollTop() > 100){
+        if(!$header.hasClass('header-fixed')){
+          $header.addClass('header-fixed');
+          $logo.attr('src', logoFixed);
+        }
+      } else {
+        if($header.hasClass('header-fixed')){
+          $header.removeClass('header-fixed');
+          $logo.attr('src', logoDefault);
+        }
       }
     }
   });
