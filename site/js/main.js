@@ -1,11 +1,30 @@
 $(function(){
-  // Header fixed on scroll
+  // Header fixed on scroll + logo swap
   var $header = $('header');
+  var $logo = $('#js-header-main-logo');
+  var logoDefault = $logo.attr('src');
+  var logoFixed = (function(){
+    var scripts = document.getElementsByTagName('script');
+    for(var i = 0; i < scripts.length; i++){
+      var src = scripts[i].src;
+      if(src.indexOf('main.js') !== -1){
+        return src.replace('js/main.js', 'css/header-logo002.svg');
+      }
+    }
+    return '/css/header-logo002.svg';
+  })();
+
   $(window).on('scroll', function(){
     if($(this).scrollTop() > 100){
-      $header.addClass('header-fixed');
+      if(!$header.hasClass('header-fixed')){
+        $header.addClass('header-fixed');
+        $logo.attr('src', logoFixed);
+      }
     } else {
-      $header.removeClass('header-fixed');
+      if($header.hasClass('header-fixed')){
+        $header.removeClass('header-fixed');
+        $logo.attr('src', logoDefault);
+      }
     }
   });
 
