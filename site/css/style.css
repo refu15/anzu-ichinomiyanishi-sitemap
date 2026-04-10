@@ -1,0 +1,723 @@
+@charset "UTF-8";
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,600,700&display=swap&subset=japanese');
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP:400,500,600,700&display=swap&subset=japanese');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&display=swap');
+
+/* =============================================================================
+   Reset
+============================================================================= */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,
+small,strike,strong,sub,sup,tt,var,b,u,i,center,
+dl,dt,dd,ol,ul,li,fieldset,form,label,legend,
+table,caption,tbody,tfoot,thead,tr,th,td,
+article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,
+menu,nav,output,ruby,section,summary,time,mark,audio,video {
+  margin:0;padding:0;border:0;font-style:normal;font-size:100%;vertical-align:baseline;
+}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+html{overflow-y:scroll}
+ol,ul{list-style:none}
+table{border-collapse:collapse;border-spacing:0}
+caption,th{text-align:left}
+a:focus{outline:none}
+hr{display:none}
+img{vertical-align:bottom;max-width:100%;height:auto}
+*,*::before,*::after{box-sizing:border-box}
+
+p.hide{margin:0;padding:0;width:0;height:0;overflow:hidden;position:absolute}
+.clearfix::after{content:".";display:block;height:0;clear:both;visibility:hidden;line-height:0;font-size:0}
+.clearfix{display:block}
+.clear{clear:both}
+
+.pc-only{display:block!important}
+.sp-only{display:none!important}
+@media screen and (max-width:767px){
+  .pc-only{display:none!important}
+  .sp-only{display:block!important}
+}
+
+/* =============================================================================
+   Base Typography & Body
+============================================================================= */
+body{
+  position:relative;margin:0;padding:0;
+  -webkit-text-size-adjust:100%;
+}
+#body-in{
+  color:#022634;
+  font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",sans-serif;
+  letter-spacing:normal;
+  line-height:1.8;
+}
+a{color:#022634;text-decoration:none}
+a:link,a:visited,a:hover,a:active{text-decoration:none}
+@media(hover:hover){
+  #body-in a{transition:all .3s;opacity:1}
+  #body-in a:hover{opacity:.6;cursor:pointer}
+}
+a[href*="tel:"]{pointer-events:none;cursor:default;text-decoration:none;display:inline}
+@media screen and (max-width:767px){
+  a[href*="tel:"]{pointer-events:auto;cursor:pointer}
+}
+
+/* =============================================================================
+   Layout / Frame
+============================================================================= */
+.main-container{
+  margin:0 auto;position:relative;width:100%;min-width:1200px;
+  padding-top:90px;
+  padding-left:calc((100% - 1200px)/2);
+  padding-right:calc((100% - 1200px)/2);
+}
+.main-container::before{
+  content:'';display:block;
+  width:calc(((100% - 1366px)/2) + 250px);
+  min-width:250px;height:100%;
+  background-color:#F2F8FA;
+  position:absolute;right:0;top:0;z-index:-1;
+}
+@media screen and (max-width:767px){
+  .main-container{width:100%;min-width:0;padding:0}
+  .main-container::before{content:none!important}
+}
+
+#main{width:890px;float:left}
+#side{width:240px;float:right}
+@media screen and (max-width:767px){
+  #main{width:auto;margin:0 auto;float:none}
+  #side{width:auto;margin:0 auto;float:none}
+}
+
+/* HOME overrides */
+.home .main-container{width:100%;min-width:0;margin:0 auto;padding:0;position:relative;z-index:10}
+.home .main-container::before{content:none!important}
+.home #main{width:100%;float:none}
+
+/* =============================================================================
+   Header
+============================================================================= */
+header{
+  position:fixed;top:0;left:0;width:100%;height:90px;z-index:99;
+  transition:all .3s;min-width:1200px;
+  background-color:rgba(255,255,255,.3);
+  -webkit-backdrop-filter:blur(10px) brightness(1.24);
+  backdrop-filter:blur(10px) brightness(1.24);
+}
+@media screen and (max-width:767px){
+  header{position:absolute;z-index:1;height:60px;min-width:0;background-color:transparent;backdrop-filter:none}
+}
+.home header{background-color:transparent;backdrop-filter:blur(0)}
+.home header.header-fixed{
+  background-color:rgba(255,255,255,.3);
+  backdrop-filter:blur(10px) brightness(1.24);
+}
+
+.header__inner{height:90px;position:relative;display:flex}
+@media screen and (max-width:767px){.header__inner{height:60px}}
+
+.header__main{width:196px}
+@media screen and (max-width:767px){.header__main{width:200px}}
+
+.header__sub{position:relative;padding-right:264px;width:calc(100% - 146px)}
+@media screen and (max-width:767px){.header__sub{display:none}}
+
+.header-main__logo{width:146px;font-size:1px;margin-top:22px;margin-left:50px}
+@media screen and (max-width:767px){.header-main__logo{width:110px;margin-top:20px;margin-left:20px}}
+.header-main__logo .header-main__link{display:block}
+.header-main__logo .header-main__image{max-width:100%}
+
+/* Header right buttons */
+.header-sub__nav-wrapper{position:absolute;right:0;top:0}
+@media screen and (max-width:767px){.header-sub__nav-wrapper{display:none}}
+
+.header-sub-nav__lists{width:264px;height:90px;display:flex}
+.header-sub-nav__list{position:relative;width:132px;height:90px}
+.header-sub-nav__link{
+  width:100%;height:100%;background-color:#fff;
+  display:flex;justify-content:center;align-items:flex-end;
+  padding-bottom:23px;line-height:1;
+}
+.header-sub-nav__link span{color:#4F819F;font-size:14px;font-weight:500}
+.header-sub-nav__list:nth-child(1) .header-sub-nav__link{
+  background-image:url("https://www.anzu.or.jp/ichinomiyanishi/common/image/contact-ic001.svg");
+  background-repeat:no-repeat;background-position:center top 22px;
+}
+.header-sub-nav__list:nth-child(2) .header-sub-nav__link{
+  background-image:url("https://www.anzu.or.jp/ichinomiyanishi/common/image/access-ic001.svg");
+  background-repeat:no-repeat;background-position:center top 21px;
+}
+.header-sub-nav__list:nth-child(2) .header-sub-nav__link::before{
+  content:'';display:block;width:1px;height:40px;
+  background-color:rgba(142,174,193,.4);position:absolute;left:0;top:26px;
+}
+@media(hover:hover) and (min-width:769px){
+  .header-sub-nav__list .header-sub-nav__link:hover{
+    opacity:1!important;background-color:#4F819F;
+  }
+  .header-sub-nav__list .header-sub-nav__link:hover span{color:#fff}
+  .header-sub-nav__list:nth-child(1) .header-sub-nav__link:hover{
+    background-image:url("https://www.anzu.or.jp/ichinomiyanishi/common/image/contact-ic001-on.svg");
+  }
+  .header-sub-nav__list:nth-child(2) .header-sub-nav__link:hover{
+    background-image:url("https://www.anzu.or.jp/ichinomiyanishi/common/image/access-ic001-on.svg");
+  }
+}
+
+/* Global Navigation */
+.gnavi-area{margin-right:35px;margin-top:32px}
+@media screen and (max-width:767px){.gnavi-area{display:none}}
+#gnavi{width:632px;margin:0 0 0 auto;position:relative}
+#gnavi>ul{width:100%;display:flex;flex-wrap:nowrap;justify-content:space-between}
+#gnavi>ul>li>a{text-decoration:none}
+#gnavi>ul>li>a>span{font-size:16px;font-weight:500;letter-spacing:.05em}
+#gnavi>ul>li>a.current,#gnavi>ul>li>a:hover{opacity:1!important;color:#BFB77D}
+.home #gnavi>ul>li>a{color:#fff}
+.home #gnavi>ul>li>a.current,.home #gnavi>ul>li>a:hover{opacity:1!important;color:#BFB77D}
+.home .header-fixed #gnavi>ul>li>a{color:#4F819F}
+.home .header-fixed #gnavi>ul>li>a.current,.home .header-fixed #gnavi>ul>li>a:hover{color:#BFB77D}
+.header-fixed #gnavi>ul>li>a{color:#022634}
+.header-fixed #gnavi>ul>li>a.current,.header-fixed #gnavi>ul>li>a:hover{opacity:1!important;color:#BFB77D}
+
+/* =============================================================================
+   Main Visual / Slider
+============================================================================= */
+.home .mainvisual-area{width:100%;min-width:1200px;margin:0 auto;position:relative}
+@media screen and (max-width:767px){.home .mainvisual-area{display:none}}
+.home .mainvisual-area ul li{text-align:center}
+.home .mainvisual-area img{width:100%;max-width:1920px}
+.home .mainvisual-area .mainvisual__tel-wrapper{position:absolute;right:7px;top:103px}
+.home .mainvisual-area .mainvisual__tel-wrapper a{color:#fff}
+.home .mainvisual-area .mainvisual__tel-wrapper a span:nth-child(1){
+  font-size:18px;font-weight:700;padding-left:24px;
+  background-image:url("https://www.anzu.or.jp/ichinomiyanishi/common/image/tel-ic001.svg");
+  background-repeat:no-repeat;background-position:left top 6px;
+}
+.home .mainvisual-area .mainvisual__tel-wrapper a span:nth-child(2){
+  padding-left:10px;font-size:12px;font-weight:700;position:relative;top:-1px;left:-11px;
+}
+.home .mainvisual-sp-area{display:none;margin:0 auto;width:100%;position:relative}
+@media screen and (max-width:767px){.home .mainvisual-sp-area{display:block}}
+.home .mainvisual-sp-area img{width:100%}
+/* bxSlider pager */
+.home .mainvisual-area .bx-pager{position:absolute;left:30px;bottom:50%;transform:translateY(50%);z-index:51}
+.home .mainvisual-area .bx-pager-item{padding:6px 0}
+.home .mainvisual-area .bx-pager-item a{
+  background-color:#fff;display:block;width:12px;height:12px;border-radius:50%;
+  text-indent:-999%;font-size:1px;white-space:nowrap;overflow:hidden;
+}
+.home .mainvisual-area .bx-pager-item a:hover,.home .mainvisual-area .bx-pager-item a.active{background-color:#4F819F}
+
+/* =============================================================================
+   Home - Section Titles
+============================================================================= */
+.home-title-wrapper{text-align:center;position:relative}
+.home-title{
+  font-family:"Cormorant Garamond",serif;font-size:52px;font-weight:600;
+  line-height:1;margin-bottom:13px;
+}
+@media screen and (max-width:767px){.home-title{font-size:38px;margin-bottom:11px}}
+.home-subtitle{color:#678A9D;font-size:17px;font-weight:400;line-height:1}
+@media screen and (max-width:767px){.home-subtitle{font-size:14px}}
+
+/* =============================================================================
+   Home - Target Section (Quick links overlapping slider)
+============================================================================= */
+.target-section{position:relative;z-index:1;margin-top:-110px}
+@media screen and (max-width:767px){.target-section{margin-top:-66px}}
+.home-target{width:1200px;margin:0 auto}
+@media screen and (max-width:767px){.home-target{width:335px}}
+.target__list{display:flex;justify-content:space-between}
+@media screen and (max-width:767px){.target__list{flex-wrap:wrap;gap:3px 3px}}
+.target__item{position:relative;width:294px;height:286px;box-shadow:8px 8px 20px rgba(0,18,25,.1)}
+@media screen and (max-width:767px){.target__item{width:166px;height:auto}}
+.target-item__link{
+  position:relative;width:100%;height:100%;display:flex;justify-content:center;align-items:center;
+  background-color:#fff;background-repeat:no-repeat;padding-top:32px;
+}
+@media screen and (max-width:767px){.target-item__link{width:166px;height:130px;padding-top:33px}}
+.target-item__link::before{
+  content:'';display:block;width:24px;height:24px;
+  background-image:url("https://www.anzu.or.jp/ichinomiyanishi/common/image/target-ar001.svg");
+  background-repeat:no-repeat;background-position:center;
+  position:absolute;left:calc(50% - 12px);top:209px;z-index:1;transition:all .3s;
+}
+@media screen and (max-width:767px){.target-item__link::before{content:none}}
+@media(hover:hover) and (min-width:769px){
+  .target-item__link:hover{opacity:1!important}
+  .target-item__link:hover::before{
+    background-image:url("https://www.anzu.or.jp/ichinomiyanishi/common/image/target-ar001-on.svg");
+    transform:scale(1.5);
+  }
+}
+.target-item__body{text-align:center}
+.target-item__t1{
+  display:block;font-family:"Noto Serif JP",serif;font-size:20px;font-weight:400;
+  line-height:1;letter-spacing:.05em;
+}
+@media screen and (max-width:767px){.target-item__t1{font-size:14px}}
+.target-item__t2{
+  display:block;color:#BCB476;font-family:"Cormorant Garamond",serif;
+  font-size:12px;font-weight:600;line-height:1;letter-spacing:.05em;margin-top:9px;
+}
+@media screen and (max-width:767px){.target-item__t2{display:none}}
+.target__item--item1 .target-item__link{background-image:url("https://www.anzu.or.jp/ichinomiyanishi/common/image/target-ic001.svg");background-position:center top 55px}
+.target__item--item2 .target-item__link{background-image:url("https://www.anzu.or.jp/ichinomiyanishi/common/image/target-ic002.svg");background-position:center top 64px}
+.target__item--item3 .target-item__link{background-image:url("https://www.anzu.or.jp/ichinomiyanishi/common/image/target-ic003.svg");background-position:center top 59px}
+.target__item--item4 .target-item__link{background-image:url("https://www.anzu.or.jp/ichinomiyanishi/common/image/target-ic004.svg");background-position:center top 56px}
+
+/* Target sub-menu */
+.target__item--item1 .target-item__menu{width:100%;display:flex;position:absolute;left:0;bottom:0;z-index:1}
+.target__item--item1 .target-item-menu__item{width:50%}
+.target__item--item1 .target-item-menu__item a{
+  display:flex;justify-content:center;align-items:center;
+  width:100%;height:40px;color:#3D7597;padding-top:1px;
+}
+.target__item--item1 .target-item-menu__item span{font-size:14px}
+.target__item--item1 .target-item-menu__item:nth-child(1) a{background-color:#E7F2F8}
+.target__item--item1 .target-item-menu__item:nth-child(2) a{background-color:#DDEAEF}
+@media(hover:hover) and (min-width:769px){
+  .target__item--item1 .target-item-menu__item a:hover{opacity:1!important;color:#fff;background-color:#3D7597}
+}
+
+/* =============================================================================
+   Home - Important News (Breaking News)
+============================================================================= */
+.home .important-section{padding-top:100px;padding-bottom:100px}
+@media screen and (max-width:767px){.home .important-section{padding-top:70px;padding-bottom:70px}}
+.home .important-area-in .title{text-align:center;margin-bottom:26px}
+.home .important-area-in h2{
+  position:relative;color:#BB2C41;font-family:"Noto Serif JP",serif;
+  font-size:24px;font-weight:400;padding-top:44px;
+}
+.home .important-area-in h2::before{
+  content:'';display:block;width:30px;height:30px;
+  background-image:url("https://www.anzu.or.jp/ichinomiyanishi/common/image/important-ic001.svg");
+  background-repeat:no-repeat;background-position:center;
+  position:absolute;left:calc(50% - 15px);top:0;
+}
+.home .important-list{border-top:1px solid #D9C1C1;border-bottom:1px solid #D9C1C1;padding:9px 0 8px}
+.home .important-list .news-list-in{width:1200px;margin:0 auto}
+@media screen and (max-width:767px){.home .important-list .news-list-in{width:calc(100% - 40px);min-width:335px}}
+.home .important-list .news-list-in dl{padding:28px 20px;display:flex;align-items:flex-start}
+.home .important-list .news-list-in dl+dl{border-top:1px solid #D9C1C1}
+.home .important-list .news-list-in dl dt{width:85px;color:#BB2C41;font-size:16px;font-weight:400}
+.home .important-list .news-list-in dl dd{width:calc(100% - 90px);padding-left:16px;font-size:15px}
+.home .important-list .news-list-in dl dd a{color:#BB2C41}
+.home .important-area .list-link{width:300px;margin:48px auto 0}
+.home .important-area .list-link a{
+  position:relative;display:block;text-align:center;
+  font-size:16px;font-weight:500;color:#BB2C41;
+  padding-bottom:22px;border-bottom:1px solid #BB2C41;
+}
+
+/* =============================================================================
+   Home - Pickup
+============================================================================= */
+.pickup-section{padding:80px 0}
+@media screen and (max-width:767px){.pickup-section{padding:50px 0}}
+.pickup-area-in{
+  width:1200px;margin:40px auto 0;
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px 0;
+}
+@media screen and (max-width:767px){.pickup-area-in{width:335px}}
+.pickup-box{width:calc(50% - 10px)}
+@media screen and (max-width:767px){.pickup-box{width:100%}}
+.pickup-box .box{display:flex;background:#fff;box-shadow:4px 4px 16px rgba(0,18,25,.06);border-radius:4px;overflow:hidden}
+.pickup-box .img-area{width:200px;flex-shrink:0}
+@media screen and (max-width:767px){.pickup-box .img-area{width:120px}}
+.pickup-box .img-area p{margin:0}
+.pickup-box .img-area img{width:100%;height:100%;object-fit:cover;display:block}
+.pickup-box .right{padding:18px 20px;display:flex;align-items:center}
+.pickup-box .title-area{font-size:14px;font-weight:500;line-height:1.6;color:#022634}
+@media screen and (max-width:767px){.pickup-box .title-area{font-size:13px}}
+
+/* =============================================================================
+   Home - News Section (Tabs)
+============================================================================= */
+.news-section{padding:80px 0;background-color:#F2F8FA}
+@media screen and (max-width:767px){.news-section{padding:50px 20px}}
+.news-area-in{width:1200px;margin:0 auto}
+@media screen and (max-width:767px){.news-area-in{width:auto}}
+.news-area-in .title{text-align:center;margin-bottom:30px}
+.news-area-in .title h2{
+  font-family:"Cormorant Garamond",serif;font-size:52px;font-weight:600;line-height:1;margin-bottom:13px;
+}
+.news-area-in .title .subtitle{color:#678A9D;font-size:17px;font-weight:400;line-height:1}
+.news-area-in .title .list-link{margin-top:16px}
+.news-area-in .title .list-link a{
+  display:inline-block;color:#4F819F;font-size:14px;font-weight:500;
+  border-bottom:1px solid #4F819F;padding-bottom:4px;
+}
+
+/* News tabs */
+.news-tab-list{display:flex;justify-content:center;gap:0;margin-top:30px}
+.news-tab-list h3{margin:0}
+.news-tab-list h3 a{
+  display:block;padding:10px 20px;font-size:14px;font-weight:500;color:#678A9D;
+  border-bottom:2px solid transparent;transition:all .3s;
+}
+.news-tab-list h3 a:hover,.news-tab-list h3.active a{
+  color:#022634;border-bottom-color:#4F819F;opacity:1!important;
+}
+
+/* News list items */
+.news-list .news-list-in dl{
+  display:flex;align-items:flex-start;padding:20px 24px;
+  border-bottom:1px solid #D0E0E6;
+}
+.news-list .news-list-in dl dt{
+  width:100px;font-size:14px;color:#678A9D;font-weight:400;flex-shrink:0;
+}
+.news-list .news-list-in dl dd{font-size:15px;padding-left:10px}
+.news-list .news-list-in dl dd a{color:#022634}
+@media(hover:hover){.news-list .news-list-in dl dd a:hover{opacity:.6}}
+
+/* News category icons */
+.news-list .news-list-in dl dt.ic001::before,
+.news-list .news-list-in dl dt.ic002::before,
+.news-list .news-list-in dl dt.ic003::before,
+.news-list .news-list-in dl dt.ic004::before,
+.news-list .news-list-in dl dt.ic005::before{
+  content:'';display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px;
+}
+.news-list .news-list-in dl dt.ic001::before{background-color:#4F819F}
+.news-list .news-list-in dl dt.ic002::before{background-color:#BB2C41}
+.news-list .news-list-in dl dt.ic003::before{background-color:#6694AF}
+.news-list .news-list-in dl dt.ic004::before{background-color:#BFB77D}
+.news-list .news-list-in dl dt.ic005::before{background-color:#678A9D}
+
+/* =============================================================================
+   Home - Column (WEB Lectures)
+============================================================================= */
+.column-section{padding:100px 0}
+@media screen and (max-width:767px){.column-section{padding:50px 20px}}
+.column-area{width:1200px;margin:0 auto}
+@media screen and (max-width:767px){.column-area{width:auto}}
+.column-list{display:flex;flex-wrap:wrap;gap:24px;margin-top:40px}
+.column-item{width:calc(33.333% - 16px);background:#fff;border-radius:8px;overflow:hidden;box-shadow:4px 4px 16px rgba(0,18,25,.06)}
+@media screen and (max-width:767px){.column-item{width:100%}}
+.column-item .img-area{height:180px;overflow:hidden}
+.column-item .img-area img{width:100%;height:100%;object-fit:cover}
+.column-item .txt-area{padding:20px}
+.column-item .txt-area .cat{
+  display:inline-block;font-size:12px;color:#4F819F;font-weight:500;
+  border:1px solid #4F819F;border-radius:3px;padding:2px 8px;margin-bottom:8px;
+}
+.column-item .txt-area .ttl{font-size:15px;font-weight:600;line-height:1.6;color:#022634}
+
+/* =============================================================================
+   Home - Centers
+============================================================================= */
+.center-section{padding:100px 0;background-color:#F2F8FA}
+@media screen and (max-width:767px){.center-section{padding:50px 20px}}
+.center-area{width:1200px;margin:0 auto}
+@media screen and (max-width:767px){.center-area{width:auto}}
+.center-list{display:flex;flex-wrap:wrap;gap:16px;margin-top:40px}
+.center-item{
+  width:calc(25% - 12px);background:#fff;border-radius:8px;
+  padding:24px 16px;text-align:center;
+  box-shadow:4px 4px 16px rgba(0,18,25,.04);transition:all .3s;
+}
+@media screen and (max-width:767px){.center-item{width:calc(50% - 8px)}}
+.center-item:hover{box-shadow:4px 4px 20px rgba(0,18,25,.1);transform:translateY(-2px)}
+.center-item .icon{font-size:12px;color:#4F819F;margin-bottom:6px;font-weight:500}
+.center-item .name{font-size:15px;font-weight:600;color:#022634;line-height:1.4}
+.center-item .name-en{font-size:11px;color:#BCB476;font-family:"Cormorant Garamond",serif;margin-top:4px}
+
+/* =============================================================================
+   Home - Recruit
+============================================================================= */
+.recruit-section{
+  position:relative;padding:100px 0;
+  background:linear-gradient(135deg,#022634 0%,#0a3d54 100%);
+  color:#fff;overflow:hidden;
+}
+@media screen and (max-width:767px){.recruit-section{padding:50px 20px}}
+.home-recruit{width:1200px;margin:0 auto;position:relative;z-index:1}
+@media screen and (max-width:767px){.home-recruit{width:auto}}
+.recruit__body{margin-top:40px}
+.recruit__list{display:flex;gap:16px;flex-wrap:wrap}
+.recruit__item{
+  width:calc(25% - 12px);background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.2);border-radius:8px;
+  padding:30px 20px;text-align:center;transition:all .3s;
+}
+@media screen and (max-width:767px){.recruit__item{width:calc(50% - 8px)}}
+.recruit__item:hover{background:rgba(255,255,255,.15);transform:translateY(-2px)}
+.recruit__item .ttl{font-size:16px;font-weight:600;margin-bottom:4px}
+.recruit__item .ttl-en{font-size:11px;color:#BCB476;font-family:"Cormorant Garamond",serif}
+.recruit__button{
+  display:block;width:300px;margin:40px auto 0;text-align:center;
+  padding:16px 0;color:#fff;font-size:16px;font-weight:500;
+  border:1px solid rgba(255,255,255,.4);border-radius:4px;transition:all .3s;
+}
+.recruit__button:hover{background:rgba(255,255,255,.1);opacity:1!important}
+.recruit-bg002{position:absolute;right:0;bottom:0;opacity:.15}
+
+/* =============================================================================
+   Home - Banners
+============================================================================= */
+.banner-section{padding:80px 0}
+@media screen and (max-width:767px){.banner-section{padding:40px 20px}}
+.banner-area-in{width:1200px;margin:0 auto}
+@media screen and (max-width:767px){.banner-area-in{width:auto}}
+.banner-area-in ul{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.banner-area-in ul li{width:calc(33.333% - 8px)}
+@media screen and (max-width:767px){.banner-area-in ul li{width:100%}}
+.banner-area-in ul li img{width:100%;border-radius:4px;display:block}
+
+/* =============================================================================
+   Footer
+============================================================================= */
+footer{position:relative;z-index:70;padding-top:150px}
+.home footer{padding-top:220px}
+@media screen and (max-width:767px){footer{z-index:60;padding-top:110px}.home footer{padding-top:110px}}
+
+/* Footer - Group (Related facilities) */
+.footer-group{width:994px;margin:0 auto;background-color:#EAF1F6}
+@media screen and (max-width:767px){.footer-group{width:auto}}
+.footer-group__title-wrapper{text-align:center;position:relative;top:-45px}
+.footer-group__title{font-family:"Cormorant Garamond",serif;font-size:34px;font-weight:600;line-height:1;margin-bottom:6px}
+.footer-group__subtitle{color:#678A9D;font-size:14px;font-weight:400;line-height:1}
+.footer-group__list{
+  width:894px;position:relative;bottom:-71px;margin:-75px auto 0;
+  display:flex;justify-content:space-between;
+}
+@media screen and (max-width:767px){.footer-group__list{width:335px;flex-wrap:wrap;bottom:-50px;margin:-65px auto 0}}
+.footer-group__item{
+  width:282px;background-color:#fff;text-align:center;
+  box-shadow:8px 8px 20px rgba(0,18,25,.1);
+}
+@media screen and (max-width:767px){.footer-group__item{width:166px;margin-bottom:3px}}
+.footer-group-item__link{display:block;width:100%}
+.footer-group-item__image-wrapper{margin-bottom:17px}
+.footer-group-item__image{max-width:100%}
+.footer-group-item__title{font-family:"Noto Serif JP",serif;font-size:15px;font-weight:600;margin-bottom:4px}
+.footer-group-item__description{font-size:14px;font-weight:400;color:#5C818F;margin-bottom:17px}
+.footer-group-item__menu{display:flex;width:100%}
+@media screen and (max-width:767px){.footer-group-item__menu{display:none}}
+.footer-group-item__menu li{width:50%;height:40px}
+.footer-group-item__menu a{
+  width:100%;height:100%;display:flex;justify-content:center;align-items:center;
+  padding-bottom:1px;color:#3D7597;font-size:13px;font-weight:500;
+}
+.footer-group-item__menu li:nth-child(1) a{background-color:#E7F2F8}
+.footer-group-item__menu li:nth-child(2) a{background-color:#DDEAEF}
+@media(hover:hover) and (min-width:769px){
+  .footer-group-item__menu li a:hover{opacity:1!important;color:#fff;background-color:#3D7597}
+}
+
+/* Footer - Middle */
+.footer-middle{background-color:#6694AF;padding-top:181px;padding-bottom:110px}
+@media screen and (max-width:767px){.footer-middle{padding-top:96px;padding-bottom:50px}}
+.footer-middle-in{width:1200px;margin:0 auto;display:flex;justify-content:space-between}
+@media screen and (max-width:767px){.footer-middle-in{width:335px;display:block}}
+.footer-main{width:600px}
+@media screen and (max-width:767px){.footer-main{width:auto}}
+.footer-main__list{display:flex}
+@media screen and (max-width:767px){.footer-main__list{display:block}}
+.footer-main__brand{width:210px}
+@media screen and (max-width:767px){.footer-main__brand{width:165px;margin:0 auto;text-align:center}}
+.footer-main__logo{max-width:100%}
+.footer-main__meta{margin-left:32px;padding-top:5px;color:#fff}
+@media screen and (max-width:767px){.footer-main__meta{margin-left:0;margin-top:16px;text-align:center}}
+.footer-main__address{font-size:14px;margin-bottom:8px}
+.footer-main__info{display:flex;align-items:center;gap:16px}
+@media screen and (max-width:767px){.footer-main__info{flex-direction:column;gap:12px}}
+.footer-meta__tel a{color:#fff;font-size:18px;font-weight:700}
+.footer-meta__tel a span:nth-child(2){font-size:12px;font-weight:400}
+.footer-sns__list{display:flex;gap:10px}
+.footer-sns__list li a{display:block}
+.footer-sns__list li a img{width:30px;height:30px}
+.footer-sub{display:flex;align-items:flex-end}
+@media screen and (max-width:767px){.footer-sub{margin-top:24px;justify-content:center}}
+.footer-sub__menu{display:flex;gap:16px}
+.footer-sub__menu li a{color:#fff;font-size:14px;font-weight:400}
+.footer-sub__menu li a span{border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:2px}
+
+/* Footer - Under */
+.footer-under{background-color:#5A8AA3;padding:20px 0}
+.footer__nav-wrapper{width:1200px;margin:0 auto;display:flex;justify-content:center;gap:24px}
+@media screen and (max-width:767px){.footer__nav-wrapper{width:auto;flex-wrap:wrap;gap:8px 16px;padding:0 20px}}
+.footer-nav__link{color:rgba(255,255,255,.8);font-size:13px}
+.footer-nav__link:hover{color:#fff;opacity:1!important}
+.footer__copy{
+  text-align:center;padding:20px 0;color:rgba(255,255,255,.6);
+  font-size:12px;background-color:#4F7D96;
+}
+
+/* Scroll to top */
+.footer__floating-btn-wrapper{
+  position:fixed;right:20px;bottom:20px;z-index:90;
+}
+.footer-floating-btn{
+  display:flex;justify-content:center;align-items:center;
+  width:50px;height:50px;background-color:#4F819F;border-radius:50%;
+  box-shadow:4px 4px 12px rgba(0,18,25,.2);transition:all .3s;
+}
+.footer-floating-btn:hover{background-color:#3D7597;opacity:1!important}
+.footer-floating-btn__item{
+  display:block;width:12px;height:12px;
+  border-top:2px solid #fff;border-right:2px solid #fff;
+  transform:rotate(-45deg);position:relative;top:3px;
+}
+
+/* =============================================================================
+   Under Page (Non-home) Styles
+============================================================================= */
+/* Breadcrumb */
+.bread-area{
+  padding:22px 0;margin:0 auto;
+  border-top:1px solid #D0E0E6;border-bottom:1px solid #D0E0E6;
+}
+.bread-area ul{width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:4px}
+@media screen and (max-width:767px){.bread-area ul{width:auto;padding:0 20px}}
+.bread-area ul li{font-size:13px;color:#678A9D}
+.bread-area ul li a{color:#678A9D}
+.bread-area ul li+li::before{content:">";margin-right:8px;color:#B0C4CE}
+
+/* Page title */
+.page-title-area{
+  padding:60px 0 50px;text-align:center;
+  background:linear-gradient(135deg,#F2F8FA 0%,#E6F0F5 100%);
+}
+@media screen and (max-width:767px){.page-title-area{padding:40px 20px 30px}}
+.page-title{font-family:"Noto Serif JP",serif;font-size:32px;font-weight:400;color:#022634;margin-bottom:8px}
+@media screen and (max-width:767px){.page-title{font-size:24px}}
+.page-title-en{font-family:"Cormorant Garamond",serif;font-size:16px;font-weight:600;color:#BCB476}
+
+/* Under page content */
+.wrapper-area.underbg{padding-top:86px}
+@media screen and (max-width:767px){.wrapper-area.underbg{padding-top:80px}}
+.main-contents{line-height:1.8;font-size:15px}
+.main-contents a{color:#022634;text-decoration:underline}
+@media screen and (max-width:767px){.main-contents{padding:0 10px}}
+
+/* Section headings */
+.main-contents h2.heading01{
+  font-family:"Noto Serif JP",serif;font-size:24px;font-weight:400;
+  color:#022634;padding-bottom:16px;border-bottom:2px solid #4F819F;
+  margin-bottom:24px;
+}
+.main-contents h3.heading02{
+  font-size:18px;font-weight:600;color:#022634;
+  border-left:4px solid #4F819F;padding-left:14px;
+  margin:30px 0 16px;
+}
+.main-contents h4.heading03{
+  font-size:16px;font-weight:600;color:#022634;
+  padding-bottom:10px;border-bottom:1px solid #D0E0E6;
+  margin:24px 0 12px;
+}
+
+/* Tables */
+.main-contents table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+.main-contents table th,.main-contents table td{border:1px solid #D0E0E6;padding:12px 16px}
+.main-contents table th{background-color:#F2F8FA;font-weight:600;color:#022634;white-space:nowrap}
+.main-contents table td{color:#333}
+@media screen and (max-width:767px){
+  .main-contents table{font-size:13px}
+  .main-contents table th,.main-contents table td{padding:10px 12px;display:block;width:100%}
+  .main-contents table th{border-bottom:none}
+  .main-contents table tr{display:block;margin-bottom:8px}
+}
+
+/* Info boxes */
+.info-box-blue{
+  background:#F2F8FA;border:1px solid #B8D4E3;border-radius:6px;
+  padding:20px 24px;margin:20px 0;font-size:14px;color:#022634;
+}
+.info-box-red{
+  background:#FEF2F2;border:1px solid #F5C6CB;border-radius:6px;
+  padding:20px 24px;margin:20px 0;font-size:14px;color:#BB2C41;
+}
+
+/* Buttons */
+.btn-main{
+  display:inline-block;background:#4F819F;color:#fff;
+  padding:14px 32px;border-radius:4px;font-size:15px;font-weight:500;
+  text-align:center;transition:all .3s;text-decoration:none;
+}
+.btn-main:hover{background:#3D7597;opacity:1!important;color:#fff}
+.btn-outline-main{
+  display:inline-block;background:#fff;color:#4F819F;
+  padding:14px 32px;border-radius:4px;font-size:15px;font-weight:500;
+  text-align:center;border:1px solid #4F819F;transition:all .3s;text-decoration:none;
+}
+.btn-outline-main:hover{background:#4F819F;color:#fff;opacity:1!important}
+
+/* Side navigation */
+#side .side-section{margin-bottom:30px}
+#side .side-title{
+  background:#4F819F;color:#fff;padding:12px 16px;
+  font-size:15px;font-weight:600;border-radius:4px 4px 0 0;
+}
+#side .side-nav{border:1px solid #D0E0E6;border-top:none;border-radius:0 0 4px 4px}
+#side .side-nav li a{
+  display:block;padding:10px 16px;font-size:14px;color:#022634;
+  border-bottom:1px solid #F2F8FA;transition:all .2s;text-decoration:none;
+}
+#side .side-nav li:last-child a{border-bottom:none}
+#side .side-nav li a:hover{background:#F2F8FA;color:#4F819F;opacity:1!important}
+#side .side-banner{display:block;margin-bottom:12px;border-radius:4px;overflow:hidden}
+#side .side-banner img{width:100%;display:block}
+
+/* Doctor card */
+.doctor-card{display:flex;gap:20px;padding:24px;border:1px solid #D0E0E6;border-radius:8px;margin-bottom:16px;background:#fff}
+.doctor-photo{width:110px;height:140px;background:#F2F8FA;border-radius:6px;flex-shrink:0;overflow:hidden}
+.doctor-photo img{width:100%;height:100%;object-fit:cover}
+.doctor-info .position{font-size:13px;color:#4F819F;font-weight:600;margin-bottom:4px}
+.doctor-info .name{font-size:20px;font-weight:700;color:#022634;margin-bottom:4px;font-family:"Noto Serif JP",serif}
+.doctor-info .name-en{font-size:12px;color:#BCB476;font-family:"Cormorant Garamond",serif;margin-bottom:10px}
+.doctor-info .specialty{font-size:14px;color:#333}
+.doctor-info .cert{font-size:13px;color:#678A9D;margin-top:8px;line-height:1.8}
+@media screen and (max-width:767px){
+  .doctor-card{flex-direction:column;align-items:center;text-align:center;padding:20px 16px}
+  .doctor-photo{width:90px;height:115px;margin-bottom:8px}
+  .doctor-info .name{font-size:18px}
+}
+
+/* Card grid */
+.card-grid{display:flex;flex-wrap:wrap;gap:20px}
+.card-grid .card-item{
+  background:#fff;border-radius:8px;overflow:hidden;
+  box-shadow:4px 4px 16px rgba(0,18,25,.04);transition:all .3s;
+}
+.card-grid .card-item:hover{box-shadow:4px 4px 20px rgba(0,18,25,.1);transform:translateY(-2px)}
+.card-grid.col-2 .card-item{width:calc(50% - 10px)}
+.card-grid.col-3 .card-item{width:calc(33.333% - 14px)}
+.card-grid.col-4 .card-item{width:calc(25% - 15px)}
+@media screen and (max-width:767px){
+  .card-grid.col-2 .card-item,.card-grid.col-3 .card-item,.card-grid.col-4 .card-item{width:100%}
+}
+.card-grid .card-item .card-img{height:160px;overflow:hidden}
+.card-grid .card-item .card-img img{width:100%;height:100%;object-fit:cover}
+.card-grid .card-item .card-body{padding:16px 20px}
+.card-grid .card-item .card-body .ttl{font-size:15px;font-weight:600;color:#022634;margin-bottom:6px}
+.card-grid .card-item .card-body .desc{font-size:13px;color:#678A9D;line-height:1.6}
+
+/* Pagination */
+.pagination{display:flex;justify-content:center;gap:6px;margin-top:40px}
+.pagination a,.pagination span{
+  display:inline-flex;justify-content:center;align-items:center;
+  width:40px;height:40px;border-radius:4px;font-size:14px;font-weight:500;
+}
+.pagination a{background:#fff;color:#4F819F;border:1px solid #D0E0E6}
+.pagination a:hover{background:#4F819F;color:#fff;opacity:1!important}
+.pagination span.current{background:#4F819F;color:#fff}
+
+/* SP Footer floating menu */
+.footer-floating-menu{display:none}
+@media screen and (max-width:767px){.footer-floating-menu{display:block;position:fixed;bottom:0;left:0;right:0;z-index:100}}
+.footer__sp-btn-nav-wrapper{background:#fff;box-shadow:0 -2px 10px rgba(0,0,0,.1)}
+.footer-sp-btn-nav__lists{display:flex}
+.footer-sp-btn-nav__list{flex:1;text-align:center}
+.footer-sp-btn-nav__link{display:block;padding:10px 0;font-size:11px;color:#4F819F;font-weight:500}
+.footer__sp-nav-wrapper{display:none;background:#022634;padding:30px 20px}
+.footer__sp-nav-wrapper.open{display:block}
+.footer-sp-nav__lists li{border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-sp-nav__link{display:block;padding:14px 0;color:#fff;font-size:15px}
