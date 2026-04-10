@@ -85,7 +85,7 @@ a[href*="tel:"]{pointer-events:none;cursor:default;text-decoration:none;display:
   .main-container::before{content:none!important}
 }
 
-#main{width:890px;float:left}
+#main{width:890px;float:left;overflow:hidden}
 #side{width:240px;float:right}
 @media screen and (max-width:767px){
   #main{width:auto;margin:0 auto;float:none}
