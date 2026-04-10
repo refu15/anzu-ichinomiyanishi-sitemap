@@ -85,12 +85,15 @@ a[href*="tel:"]{pointer-events:none;cursor:default;text-decoration:none;display:
   .main-container::before{content:none!important}
 }
 
-#main{width:890px;float:left}
+#main{width:890px;float:left;min-width:0}
 #side{width:240px;float:right}
 @media screen and (max-width:767px){
   #main{width:auto;margin:0 auto;float:none}
   #side{width:auto;margin:0 auto;float:none}
 }
+
+/* Under pages: force #main to not exceed article width */
+#wrapper-under #main{width:100%;float:none}
 
 /* HOME overrides */
 .home .main-container{width:100%;min-width:0;margin:0 auto;padding:0;position:relative;z-index:10}
@@ -766,10 +769,20 @@ footer{position:relative;z-index:70;padding-top:150px}
 .under-main-img img{width:100%;display:block}
 
 /* Under page 2-column layout */
-#wrapper-under{display:flex;gap:0}
-#wrapper-under article{flex:1;min-width:0}
+.wrapper-area.underbg{padding-top:86px}
+@media screen and (max-width:767px){.wrapper-area.underbg{padding-top:80px}}
+
+#wrapper-under{
+  width:1200px;margin:0 auto;
+  display:flex;justify-content:space-between;
+  gap:0;
+}
+#wrapper-under article{width:890px;flex-shrink:0;min-width:0}
+#wrapper-under #side{width:240px;flex-shrink:0;padding-top:0}
 @media screen and (max-width:767px){
-  #wrapper-under{display:block}
+  #wrapper-under{display:block;width:auto;padding:0 20px}
+  #wrapper-under article{width:auto}
+  #wrapper-under #side{width:auto;margin-top:40px}
 }
 
 /* Column layout for junction */
