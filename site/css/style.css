@@ -765,20 +765,16 @@ footer{position:relative;z-index:70;padding-top:150px}
 .under-main-img{margin-bottom:30px}
 .under-main-img img{width:100%;display:block}
 
-/* Under page 2-column layout (float-based, matching original site) */
+/* Under page 2-column layout (float-based, matching original site)
+   Structure: .main-container > .wrapper-area > #wrapper-under > #main + #side
+   .main-container has padding-left/right to center 1200px content area
+   #main: 890px float:left (white background)
+   #side: 240px float:right (#F2F8FA background via ::before)
+============================================================================= */
 .wrapper-area.underbg{padding-top:86px}
 @media screen and (max-width:767px){.wrapper-area.underbg{padding-top:80px}}
 
-#wrapper-under{width:1200px;margin:0 auto}
 #wrapper-under::after{content:"";display:block;clear:both}
-#wrapper-under article{width:890px;float:left}
-#wrapper-under #main{width:100%;float:none}
-#wrapper-under #side{width:240px;float:right}
-@media screen and (max-width:767px){
-  #wrapper-under{width:auto;padding:0 20px}
-  #wrapper-under article{width:auto;float:none}
-  #wrapper-under #side{width:auto;float:none;margin-top:40px}
-}
 
 /* Column layout for junction */
 .column2-11{display:flex;gap:34px}
