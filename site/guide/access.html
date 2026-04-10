@@ -4,16 +4,55 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="format-detection" content="email=no,telephone=no,address=no">
-<title>交通アクセス・駐車場のご案内 | 一宮西病院</title>
+<title>交通アクセス･駐車場のご案内 | ご利用案内 | 一宮西病院 | 社会医療法人 杏嶺会</title>
 <link rel="stylesheet" href="../css/bxslider.css">
 <link rel="stylesheet" href="../css/style.css">
-
+<style>
+.sns-box {display:flex;gap:.5rem;align-items:center}
+.btn-sns {display:flex;justify-content:center;align-items:center;width:2.5rem;height:2.5rem;border-radius:50%;color:#fff;text-decoration:none;transition:.3s}
+.btn-sns svg {fill:#fff;width:1.2em;height:1.2em}
+.btn-line {background-color:#5DB40F}
+.h1-area {padding:0 0 20px;margin-bottom:30px}
+.h1-area h1 {font-family:'Noto Serif JP',serif;font-size:28px;font-weight:400;color:#022634;position:relative;padding-left:0}
+.map-section {text-align:center;margin-bottom:40px;background-color:#ECF5F9;padding:20px 0;border-radius:8px}
+.map-text {font-size:.9em;margin-bottom:15px;color:#36637E;font-weight:bold}
+.map-icons {display:flex;justify-content:center;gap:30px}
+.map-icons a {display:flex;flex-direction:column;align-items:center;text-decoration:none;color:#36637E;font-size:10px}
+.map-icons svg {width:36px;height:36px;margin-bottom:6px}
+.movie-wrap {position:relative;padding-bottom:56.25%;height:0;overflow:hidden}
+.movie-wrap iframe {position:absolute;top:0;left:0;width:100%;height:100%}
+.button--type1 {display:block;text-align:center;padding:14px 20px;background:#4F819F;color:#fff!important;text-decoration:none;font-weight:500;transition:.3s}
+.button--type1:hover {background:#1F5A7E;opacity:1!important}
+.anchor-area {background:#F2F8FA;padding:20px 30px;margin:30px 0;border-radius:6px}
+.anchor-area .pageindex p {font-size:13px;color:#678A9D;margin-bottom:10px}
+.anchor-area ul {display:flex;flex-wrap:wrap;gap:8px}
+.anchor-area ul li a {display:inline-block;padding:8px 16px;background:#fff;border:1px solid #D0E0E6;border-radius:4px;font-size:14px;color:#4F819F;text-decoration:none}
+.anchor-area ul li a:hover {background:#4F819F;color:#fff;opacity:1!important}
+.h2-area {margin:40px 0 20px}
+.h2-area h2 {font-family:'Noto Serif JP',serif;font-size:22px;font-weight:400;color:#022634;padding-bottom:14px;border-bottom:2px solid #4F819F}
+.h3-area {margin:30px 0 16px}
+.h3-area h3 {font-size:18px;font-weight:600;color:#022634;padding-left:16px;border-left:4px solid #4F819F}
+.table-area table {width:100%;border-collapse:collapse;margin-bottom:20px}
+.table-area td {border:1px solid #D0E0E6;padding:12px 16px;font-size:14px}
+.center-justification {display:block;text-align:center}
+.color-02 {color:#fff}
+.strong {font-weight:700}
+.right-adjust {text-align:right;display:block}
+.go-top {text-align:right;margin:20px 0}
+.go-top a {color:#678A9D;font-size:13px;text-decoration:none}
+.pnavi-area {margin:20px 0}
+.contents-list-ul {padding-left:20px;list-style:disc}
+.contents-list-ul li {margin-bottom:8px}
+@media screen and (max-width:767px) {
+  .h1-area h1 {font-size:22px}
+}
+</style>
 <script src="../js/jquery.min.js"></script>
 <script src="../js/jquery.bxslider.min.js"></script>
 <script src="../js/main.js"></script>
 </head>
 <body>
-<div id="body-in">
+<div id="body-in" class="guide">
 <p class="hide"><a href="#gnavi">グローバルナビゲーションへ</a></p>
 <p class="hide"><a href="#main">本文へ</a></p>
 <p class="hide"><a href="#footer">フッターへ</a></p>
@@ -32,14 +71,14 @@
         <div class="header__sub header-sub">
           <div class="header-sub__nav-wrapper">
             <ul class="header-sub-nav__lists">
-              <li class="header-sub-nav__list"><a href="#" class="header-sub-nav__link"><span>お問い合わせ</span></a></li>
-              <li class="header-sub-nav__list"><a href="access.html" class="header-sub-nav__link"><span>交通アクセス</span></a></li>
+              <li class="header-sub-nav__list"><a href="https://req.qubo.jp/anzu/form/inquiry" class="header-sub-nav__link"><span>お問い合わせ</span></a></li>
+              <li class="header-sub-nav__list"><a href="../guide/access.html" class="header-sub-nav__link"><span>交通アクセス</span></a></li>
             </ul>
           </div>
           <div class="gnavi-area">
             <div id="gnavi">
               <ul>
-                <li><a href="index.html" class="current"><span>ご利用案内</span></a></li>
+                <li><a href="../guide/index.html" class="current"><span>ご利用案内</span></a></li>
                 <li><a href="../department/index.html"><span>診療科紹介</span></a></li>
                 <li><a href="../special/index.html"><span>専門医療</span></a></li>
                 <li><a href="../area/index.html"><span>医療連携・紹介</span></a></li>
@@ -53,75 +92,326 @@
     </div>
   </div>
 </header>
-<div class="bread-area"><ul><li><a href="../index.html">HOME</a></li><li><a href="index.html">ご利用案内</a></li><li>交通アクセス</li></ul></div><div class="page-title-area">
-  <h2 class="page-title">交通アクセス・駐車場のご案内</h2>
-  <p class="page-title-en">Access</p>
-</div>
+
+<div class="bread-area"><ul><li><a href="../index.html">HOME</a></li><li><a href="../guide/index.html">ご利用案内</a></li><li>交通アクセス・駐車場のご案内</li></ul></div>
 <div class="main-container">
-  <div class="wrapper-area underbg">
-    <div id="wrapper" class="clearfix">
-      <div id="main">
+  <div class="wrapper-area underbg clearfix">
+    <div id="wrapper-under" class="clearfix">
+      <article><div id="main" class="clearfix">
         <div class="main-contents">
-<div style="height:400px;background:#E6F0F5;display:flex;align-items:center;justify-content:center;color:#678A9D;font-size:16px;border-radius:8px;margin-bottom:30px">Google Maps 埋め込みエリア</div>
-<h2 class="heading01">所在地・連絡先</h2>
-<table><tr><th>住所</th><td>〒494-0001 愛知県一宮市開明字平1番地</td></tr><tr><th>電話</th><td>0586-48-0077（代表）</td></tr><tr><th>FAX</th><td>0586-48-0078</td></tr></table>
-<h2 class="heading01" style="margin-top:40px">交通手段別アクセス</h2>
-<h3 class="heading02">電車でお越しの方</h3>
-<p>名鉄本線「開明駅」より徒歩約15分<br>名古屋駅からの運賃目安: 440〜470円 / 岐阜駅からの運賃目安: 390〜410円</p>
-<h3 class="heading02">バスでお越しの方</h3>
-<p>名鉄バス17番線「一宮西線」で「一宮駅」から乗車<br>i-バス138番コース「一宮駅」から約9分</p>
-<h3 class="heading02">お車でお越しの方</h3>
-<p>東海北陸自動車道「尾西インター」利用<br>タクシー: 一宮駅から約10〜15分（1,000〜1,500円目安）</p>
-<h3 class="heading02">無料シャトルバス</h3>
-<p>上林記念病院との間で運行（月〜土曜、1時間ごと）</p>
-<h2 class="heading01" style="margin-top:40px">駐車場のご案内</h2>
-<table><tr><th>駐車場</th><th>台数</th></tr><tr><td>平面駐車場</td><td>約1,000台</td></tr><tr><td>身体障がい者用駐車場</td><td>37台（ゲート式）</td></tr></table>
-        </div>
-      </div>
-<div id="side">
-  <div class="side-section">
-    <div class="side-title">ご利用案内</div>
-    <ul class="side-nav">
-      <li><a href="outpatient.html">外来受診の方</a></li>
-      <li><a href="inpatient.html">入院・お見舞いの方</a></li>
-      <li><a href="dock.html">人間ドック・健康診断</a></li>
-      <li><a href="access.html">交通アクセス</a></li>
-    </ul>
-  </div>
-  <div class="side-section">
-    <div class="side-title">診療科紹介</div>
-    <ul class="side-nav">
-      <li><a href="../department/index.html">診療科一覧</a></li>
-      <li><a href="../department/detail.html">循環器内科</a></li>
-      <li><a href="../department/center.html">脳卒中センター</a></li>
-    </ul>
-  </div>
-  <div class="side-section">
-    <div class="side-title">専門医療</div>
-    <ul class="side-nav">
-      <li><a href="../special/index.html">専門医療トップ</a></li>
-      <li><a href="../special/interview.html">ドクターインタビュー</a></li>
-    </ul>
-  </div>
-  <div class="side-section">
-    <div class="side-title">病院紹介</div>
-    <ul class="side-nav">
-      <li><a href="../about/index.html">病院紹介トップ</a></li>
-      <li><a href="../about/ward.html">病棟のご案内</a></li>
-      <li><a href="../news/index.html">お知らせ</a></li>
-      <li><a href="../news/column.html">健康のつボ!</a></li>
-      <li><a href="../seminar/index.html">市民公開講座</a></li>
-    </ul>
-  </div>
-  <div class="side-section">
-    <div class="side-title">採用情報</div>
-    <ul class="side-nav">
-      <li><a href="../recruit/index.html">採用情報トップ</a></li>
-      <li><a href="../recruit/nurse.html">看護師採用</a></li>
-      <li><a href="../recruit/resident.html">臨床研修医</a></li>
-    </ul>
+
+<!-- h1 -->
+<div class="h1-area">
+  <h1>交通アクセス・駐車場のご案内</h1>
+</div>
+
+<!-- SNSシェアボタン -->
+<div class="sns-box">
+  <a class="btn-sns btn-line" href="https://social-plugins.line.me/lineit/share?url=https://www.anzu.or.jp/ichinomiyanishi/guide/access.html" target="_blank" rel="noopener noreferrer">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 5.82 2 10.5c0 4.21 3.74 7.74 8.79 8.4.34.07.81.22.92.51.1.26.07.66.03.92l-.15.91c-.05.27-.21 1.07.94.58 1.14-.49 6.17-3.63 8.42-6.22C22.78 13.42 22 11.62 22 10.5 22 5.82 17.52 2 12 2z"/></svg>
+  </a>
+</div>
+
+<!-- Google Maps埋め込み -->
+<div style="position: relative; width: 100%; padding-top: 66.66%; margin: 20px 0 30px;">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13525.970791395612!2d136.77801710563836!3d35.31360534937454!3m2!1i1024!2i768!4f10!3m3!1m2!1s0x6003a6dd5cbee9d7%3A0xd9108bd045f86b0c!2z5LiA5a6u6KW_55eF6Zmi!5e0!3m2!1sja!2sus!4v1756337864564!5m2!1sja!2sus" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+<!-- 基本情報テーブル -->
+<div class="table-area" style="margin-bottom:30px;">
+  <table>
+    <tr>
+      <td style="width:90px; border-right: 1px solid #BCB476; font-weight:bold;">名称</td>
+      <td><ruby>一宮西病院<rp>（</rp><rt>いちのみやにしびょういん</rt><rp>）</rp></ruby></td>
+    </tr>
+    <tr>
+      <td style="width:90px; border-right: 1px solid #BCB476; font-weight:bold;">所在地</td>
+      <td>〒494-0001 愛知県一宮市<ruby>開明<rp>（</rp><rt>かいめい</rt><rp>）</rp></ruby>字<ruby>平<rp>（</rp><rt>たいら</rt><rp>）</rp></ruby>1番地</td>
+    </tr>
+    <tr>
+      <td style="width:90px; border-right: 1px solid #BCB476; font-weight:bold;">電話番号</td>
+      <td>0586-48-0077（代表）</td>
+    </tr>
+  </table>
+</div>
+
+<!-- 地図を開く -->
+<div class="map-section">
+  <p class="map-text">地図を開く</p>
+  <div class="map-icons">
+    <a href="https://maps.google.com/maps?q=35.31360534937454,136.77801710563836" target="_blank" rel="noopener noreferrer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#1ea362" d="M24 4c-7.73 0-14 6.27-14 14 0 10.5 14 26 14 26s14-15.5 14-26c0-7.73-6.27-14-14-14z"/><circle fill="#fff" cx="24" cy="18" r="5"/><path fill="#4285f4" d="M24 4v14h14c0-7.73-6.27-14-14-14z"/><path fill="#ffba00" d="M10 18c0 10.5 14 26 14 26V18z"/><path fill="#de3e2c" d="M24 18v26s14-15.5 14-26z"/></svg>
+      Google Maps
+    </a>
+    <a href="https://maps.apple.com/?q=35.31360534937454,136.77801710563836" target="_blank" rel="noopener noreferrer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><rect fill="#48a0f7" width="48" height="48" rx="10"/><path fill="#fff" d="M24 10c-5.52 0-10 4.48-10 10 0 7.5 10 18 10 18s10-10.5 10-18c0-5.52-4.48-10-10-10zm0 13.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"/></svg>
+      Apple Maps
+    </a>
   </div>
 </div>
+
+<!-- ページ内目次 -->
+<div class="anchor-area">
+  <div class="pageindex">
+    <p>ページ内目次</p>
+  </div>
+  <ul>
+    <li><a href="#parking">駐車場・駐輪場のご案内</a></li>
+    <li><a href="#car">お車でお越しの方</a></li>
+    <li><a href="#public">公共交通機関でお越しの方</a></li>
+    <li><a href="#shuttle">無料シャトルバスのご案内</a></li>
+  </ul>
+</div>
+
+<!-- ============================== -->
+<!-- 駐車場・駐輪場のご案内 -->
+<!-- ============================== -->
+<div class="h2-area" id="parking">
+  <h2>駐車場・駐輪場のご案内</h2>
+</div>
+
+<p style="margin-bottom:20px;">
+  <a href="https://www.anzu.or.jp/ichinomiyanishi/media/parkingarea_202504.webp" target="_blank">
+    <img src="https://www.anzu.or.jp/ichinomiyanishi/media/parkingarea_202504.webp" alt="駐車場エリア" style="width:100%;">
+  </a>
+</p>
+<p style="font-size:13px;color:#678A9D;margin-bottom:15px;">※黄色部分は身体障がい者用駐車場</p>
+
+<p style="margin-bottom:20px;">約1,000台が駐車可能な平面スペースをご用意しております。お車でお越しの際は、できるだけ奥の駐車場からご利用いただきますようお願いいたします。</p>
+
+<p style="margin-bottom:30px;">
+  <a href="../guide/index.html" class="button--type1">入院患者さまの駐車場利用について</a>
+</p>
+
+<!-- 身体障がい者用駐車場 -->
+<div class="h3-area">
+  <h3>身体障がい者用駐車場</h3>
+</div>
+
+<p style="margin-bottom:20px;">
+  <img src="https://www.anzu.or.jp/ichinomiyanishi/media/handicap_parking_02_202307-w900.webp" alt="身体障がい者用駐車場" style="width:100%;">
+</p>
+
+<p style="margin-bottom:20px;">A東駐車場に身体障がい者ご本人専用車優先スペース、A北・B南駐車場にゲート式身体障がい者用駐車場(37台)がございます。</p>
+
+<p style="font-size:14px;font-weight:bold;color:#36637E;margin-bottom:10px;">ゲート式身体障がい者用駐車場</p>
+<div class="movie-wrap" style="margin-bottom:30px;">
+  <iframe src="https://www.youtube.com/embed/pwJqgMursE0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<div class="go-top"><a href="#body-in">▲ページの先頭へ</a></div>
+
+<!-- ============================== -->
+<!-- お車でお越しの方 -->
+<!-- ============================== -->
+<div class="h2-area" id="car">
+  <h2>お車でお越しの方</h2>
+</div>
+
+<!-- 自家用車をご利用の場合 -->
+<div class="h3-area">
+  <h3>自家用車をご利用の場合</h3>
+</div>
+
+<p style="margin-bottom:20px;">
+  <img src="https://www.anzu.or.jp/ichinomiyanishi/media/access_car_202307-w900.webp" alt="道順案内図" style="width:100%;">
+</p>
+
+<p style="font-size:13px;color:#678A9D;margin-bottom:20px;">※住所が表示されない場合は、尾西インター(出口)付近を設定してください。</p>
+
+<!-- タクシーをご利用の場合 -->
+<div class="h3-area">
+  <h3>タクシーをご利用の場合</h3>
+</div>
+
+<p style="font-size:14px;font-weight:bold;color:#36637E;margin-bottom:10px;">JR尾張一宮駅・名鉄一宮駅から</p>
+
+<p style="margin-bottom:20px;">
+  <img src="https://www.anzu.or.jp/ichinomiyanishi/media/access_taxi_202307-w900.webp" alt="タクシーアクセス" style="width:100%;">
+</p>
+
+<div class="table-area">
+  <table>
+    <tr>
+      <td style="width:120px; font-weight:bold; background:#F2F8FA;">距離</td>
+      <td>約2.6km</td>
+    </tr>
+    <tr>
+      <td style="width:120px; font-weight:bold; background:#F2F8FA;">所要時間</td>
+      <td>約10-15分</td>
+    </tr>
+    <tr>
+      <td style="width:120px; font-weight:bold; background:#F2F8FA;">運賃目安</td>
+      <td>約1,000〜1,500円</td>
+    </tr>
+  </table>
+</div>
+
+<div class="go-top"><a href="#body-in">▲ページの先頭へ</a></div>
+
+<!-- ============================== -->
+<!-- 公共交通機関でお越しの方 -->
+<!-- ============================== -->
+<div class="h2-area" id="public">
+  <h2>公共交通機関でお越しの方</h2>
+</div>
+
+<!-- バスをご利用の場合 -->
+<div class="h3-area">
+  <h3>バスをご利用の場合</h3>
+</div>
+
+<p style="margin-bottom:20px;">
+  <img src="https://www.anzu.or.jp/ichinomiyanishi/media/bus-stop_202604_001.webp" alt="バス停" style="width:100%;">
+</p>
+
+<p style="margin-bottom:20px;">バス停はA東駐車場内にございます。</p>
+
+<!-- 名鉄バス -->
+<p style="font-size:14px;font-weight:bold;color:#36637E;margin-bottom:10px;background:#F2F8FA;padding:8px 12px;border-left:4px solid #E8423F;">名鉄バス</p>
+
+<p style="margin-bottom:15px;">
+  <a href="https://www.anzu.or.jp/ichinomiyanishi/media/260401_meitetsu-bus_001.webp" target="_blank">
+    <img src="https://www.anzu.or.jp/ichinomiyanishi/media/260401_meitetsu-bus_001.webp" alt="名鉄バス路線図" style="width:100%;">
+  </a>
+</p>
+
+<ul class="contents-list-ul" style="margin-bottom:15px;">
+  <li>一宮駅から<span class="strong">17番一宮西線</span>にご乗車ください。</li>
+  <li>その他のバス停：馬引、馬引西、繊維センター前（各徒歩約10分）</li>
+</ul>
+
+<p style="margin-bottom:20px;">
+  <a href="https://www.meitetsu-bus.co.jp/" target="_blank" rel="noopener noreferrer" class="button--type1">名鉄バス 公式サイト</a>
+</p>
+
+<!-- i-バス -->
+<p style="font-size:14px;font-weight:bold;color:#36637E;margin-bottom:10px;background:#F2F8FA;padding:8px 12px;border-left:4px solid #F5B133;">i-バス</p>
+
+<p style="margin-bottom:15px;"><span class="strong">138一宮コース</span>をご利用ください。</p>
+
+<ul class="contents-list-ul" style="margin-bottom:20px;">
+  <li><a href="https://www.city.ichinomiya.aichi.jp/kurashi/kotsuu/1000111.html" target="_blank" rel="noopener noreferrer" style="color:#4F819F;">系統時刻表（138一宮コース）</a></li>
+  <li><a href="https://www.city.ichinomiya.aichi.jp/kurashi/kotsuu/1000111.html" target="_blank" rel="noopener noreferrer" style="color:#4F819F;">系統時刻表（150尾西北コース）</a></li>
+</ul>
+
+<!-- 電車をご利用の場合 -->
+<div class="h3-area">
+  <h3>電車をご利用の場合</h3>
+</div>
+
+<p style="margin-bottom:20px;">
+  <img src="https://www.anzu.or.jp/ichinomiyanishi/media/access_train_202307-w900.webp" alt="電車アクセス" style="width:100%;">
+</p>
+
+<div class="table-area">
+  <table>
+    <tr>
+      <td style="width:180px; font-weight:bold; background:#F2F8FA;">名鉄一宮駅から</td>
+      <td>路線バスで約20分</td>
+    </tr>
+    <tr>
+      <td style="width:180px; font-weight:bold; background:#F2F8FA;">名鉄開明駅から</td>
+      <td>徒歩約15分</td>
+    </tr>
+  </table>
+</div>
+
+<div class="go-top"><a href="#body-in">▲ページの先頭へ</a></div>
+
+<!-- ============================== -->
+<!-- 無料シャトルバスのご案内 -->
+<!-- ============================== -->
+<div class="h2-area" id="shuttle">
+  <h2>無料シャトルバスのご案内</h2>
+</div>
+
+<p style="margin-bottom:20px;">
+  <img src="https://www.anzu.or.jp/ichinomiyanishi/media/shuttle-bus_001r.webp" alt="無料シャトルバス" style="width:100%;">
+</p>
+
+<p style="margin-bottom:20px;">一宮西病院⇔上林記念病院間を無料シャトルバスで運行しております。</p>
+
+<!-- 発着場所 -->
+<div class="table-area" style="margin-bottom:30px;">
+  <table>
+    <tr>
+      <td style="background:#6694AF;color:#fff;font-weight:bold;text-align:center;">一宮西病院</td>
+      <td>A・B棟正面玄関前</td>
+    </tr>
+    <tr>
+      <td style="background:#F5B133;color:#fff;font-weight:bold;text-align:center;">上林記念病院</td>
+      <td>正面玄関前</td>
+    </tr>
+  </table>
+</div>
+
+<!-- 時刻表（月〜金） -->
+<p style="font-size:16px;font-weight:bold;color:#022634;margin-bottom:10px;">時刻表（月〜金曜日）</p>
+<div class="table-area" style="margin-bottom:30px;">
+  <table style="text-align:center;">
+    <tr>
+      <td colspan="2" style="background:#4F819F;color:#fff;font-weight:bold;">一宮西病院</td>
+      <td style="background:#F5B133;color:#fff;font-weight:bold;">上林記念病院</td>
+    </tr>
+    <tr>
+      <td style="background:#4F819F;color:#fff;font-weight:bold;">B棟</td>
+      <td style="background:#AD6666;color:#fff;font-weight:bold;">A棟</td>
+      <td style="background:#F5B133;color:#fff;font-weight:bold;">上林</td>
+    </tr>
+    <tr><td>8:35</td><td>8:40</td><td>8:25</td></tr>
+    <tr><td>9:35</td><td>9:40</td><td>9:25</td></tr>
+    <tr><td>10:35</td><td>10:40</td><td>10:25</td></tr>
+    <tr><td>11:35</td><td>11:40</td><td>11:25</td></tr>
+    <tr><td>12:35</td><td>12:40</td><td>12:25</td></tr>
+    <tr><td>13:35</td><td>13:40</td><td>13:25</td></tr>
+    <tr><td>14:35</td><td>14:40</td><td>14:25</td></tr>
+    <tr><td>15:05</td><td>15:10</td><td>14:55</td></tr>
+    <tr><td>16:05</td><td>16:10</td><td>15:55</td></tr>
+  </table>
+</div>
+
+<!-- 時刻表（土曜） -->
+<p style="font-size:16px;font-weight:bold;color:#022634;margin-bottom:10px;">時刻表（土曜日）</p>
+<div class="table-area" style="margin-bottom:30px;">
+  <table style="text-align:center;">
+    <tr>
+      <td colspan="2" style="background:#4F819F;color:#fff;font-weight:bold;">一宮西病院</td>
+      <td style="background:#F5B133;color:#fff;font-weight:bold;">上林記念病院</td>
+    </tr>
+    <tr>
+      <td style="background:#4F819F;color:#fff;font-weight:bold;">B棟</td>
+      <td style="background:#AD6666;color:#fff;font-weight:bold;">A棟</td>
+      <td style="background:#F5B133;color:#fff;font-weight:bold;">上林</td>
+    </tr>
+    <tr><td>8:35</td><td>8:40</td><td>8:25</td></tr>
+    <tr><td>9:35</td><td>9:40</td><td>9:25</td></tr>
+    <tr><td>10:35</td><td>10:40</td><td>10:25</td></tr>
+    <tr><td>11:35</td><td>11:40</td><td>11:25</td></tr>
+  </table>
+</div>
+
+<div class="go-top"><a href="#body-in">▲ページの先頭へ</a></div>
+
+        </div>
+      </div></article>
+
+<!-- サイドバー -->
+<div id="side">
+  <div class="lnavi-area">
+    <div class="category-area"><p class="category"><a href="../guide/index.html">ご利用案内</a></p></div>
+    <div class="lnavi clearfix"><ul class="second">
+      <li><a href="../guide/index.html">外来受診</a></li>
+      <li><a href="../guide/index.html">入院・お見舞い</a></li>
+      <li><a href="../guide/index.html">院内の施設・窓口</a></li>
+      <li><a href="../guide/index.html">イベント・体制</a></li>
+    </ul><hr></div>
+  </div>
+  <div class="banner-area"><div class="banner-area-in"><ul class="clearfix">
+    <li><a href="http://www.youtube.com/channel/UCIRqbvkvLDvAoT_UaSycrCQ?sub_confirmation=1" target="_blank"><img src="https://www.anzu.or.jp/ichinomiyanishi/media/banner_youtube_202412.webp" alt="YouTube"></a></li>
+  </ul></div></div>
+</div>
+
     </div>
   </div>
 </div>
@@ -172,7 +462,7 @@
           </ul>
         </div>
       </div>
-      <div class="footer-middle">
+      <div class="footer-middle" style="background:#6694AF;">
         <div class="footer-middle-in">
           <div class="footer__main footer-main">
             <div class="footer-main__list">
@@ -194,13 +484,13 @@
           </div>
           <div class="footer-sub">
             <ul class="footer-sub__menu">
-              <li><a href="access.html"><span>交通アクセス</span></a></li>
+              <li><a href="../guide/access.html"><span>交通アクセス</span></a></li>
               <li><a href="https://www.anzu.or.jp/"><span>社会医療法人 杏嶺会</span></a></li>
             </ul>
           </div>
         </div>
       </div>
-      <div class="footer-under">
+      <div class="footer-under" style="background:#5A8AA3;">
         <div class="footer__nav-wrapper">
           <ul class="footer-nav__lists">
             <li class="footer-nav__list"><a class="footer-nav__link" href="../about/index.html">個人情報保護方針</a></li>
@@ -210,14 +500,14 @@
           </ul>
         </div>
       </div>
-      <p class="footer__copy">&copy; Kyouryoukai All Rights Reserved.</p>
+      <p class="footer__copy" style="background:#4F7D96;">&copy; Kyouryoukai All Rights Reserved.</p>
     </div>
   </div>
   <div class="footer-floating-menu">
     <div class="footer__sp-nav-wrapper js-footer-menu" id="js-footer-menu1">
       <div class="footer__sp-nav-wrap-in">
         <ul class="footer-sp-nav__lists">
-          <li class="footer-sp-nav__list"><a class="footer-sp-nav__link" href="index.html">ご利用案内</a></li>
+          <li class="footer-sp-nav__list"><a class="footer-sp-nav__link" href="../guide/index.html">ご利用案内</a></li>
           <li class="footer-sp-nav__list"><a class="footer-sp-nav__link" href="../department/index.html">診療科紹介</a></li>
           <li class="footer-sp-nav__list"><a class="footer-sp-nav__link" href="../special/index.html">専門医療</a></li>
           <li class="footer-sp-nav__list"><a class="footer-sp-nav__link" href="../area/index.html">医療連携・紹介</a></li>
@@ -229,8 +519,8 @@
     <div class="footer__sp-btn-nav-wrapper">
       <nav class="footer__sp-btn footer-sp-btn">
         <ul class="footer-sp-btn-nav__lists">
-          <li class="footer-sp-btn-nav__list"><a class="footer-sp-btn-nav__link" href="#"><span class="footer-sp-btn-nav__label">お問い合わせ</span></a></li>
-          <li class="footer-sp-btn-nav__list"><a class="footer-sp-btn-nav__link" href="access.html"><span class="footer-sp-btn-nav__label">交通アクセス</span></a></li>
+          <li class="footer-sp-btn-nav__list"><a class="footer-sp-btn-nav__link" href="https://req.qubo.jp/anzu/form/inquiry"><span class="footer-sp-btn-nav__label">お問い合わせ</span></a></li>
+          <li class="footer-sp-btn-nav__list"><a class="footer-sp-btn-nav__link" href="../guide/access.html"><span class="footer-sp-btn-nav__label">交通アクセス</span></a></li>
           <li class="footer-sp-btn-nav__list js-footer-button" id="js-footer-button1" data-target="js-footer-menu1"><p class="footer-sp-btn-nav__link"><span class="footer-sp-btn-nav__label">メニュー</span></p></li>
         </ul>
       </nav>
